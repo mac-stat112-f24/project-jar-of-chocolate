@@ -1,3 +1,29 @@
 # Proposal {.unnumbered}
 
-Write your proposal in this file.
+**Title: Project proposal** 
+
+**Team name: Jar of Chocolate**
+
+**Team members:** 
+
+- Madeleine Kemper 
+- Justin Chalichemala
+- Robert Reiss
+- Tanisha Dodla 
+
+**A short description of the project:** 
+
+We will be looking at social media usage and behavior on a variety of social media apps. 
+
+**Inspiration behind choosing this project:** 
+
+We found a reasonably-sized dataset about an idea that was interesting (social media use). 
+
+**Deliverables:** 
+
+We will take a collaborative approach to create these deliverables, while ensuring that everyone works on parts of all of these delivarables: 
+
+- Proposal 
+- Sketch 
+- Report 
+- Video 
