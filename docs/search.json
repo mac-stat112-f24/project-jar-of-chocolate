@@ -1,0 +1,33 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "write your project title here",
+    "section": "",
+    "text": "Preface\nAdd introduction to your project here.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "report.html",
+    "href": "report.html",
+    "title": "Report",
+    "section": "",
+    "text": "Add your report to this file.",
+    "crumbs": [
+      "Report"
+    ]
+  },
+  {
+    "objectID": "proposal.html",
+    "href": "proposal.html",
+    "title": "Proposal",
+    "section": "",
+    "text": "Title: Project proposal\nTeam name: Jar of Chocolate\nTeam members:\n\nMadeleine Kemper\nJustin Chalichemala\nRobert Reiss\nTanisha Dodla\n\nA short description of the project:\nWe will be looking at social media usage and behavior on a variety of social media apps.\nInspiration behind choosing this project:\nWe found a reasonably-sized dataset about an idea that was interesting (social media use).\nDeliverables:\nWe will take a collaborative approach to create these deliverables, while ensuring that everyone works on parts of all of these delivarables:\n\nProposal\nSketch\nReport\nVideo",
+    "crumbs": [
+      "Appendices",
+      "Proposal"
+    ]
+  }
+]
