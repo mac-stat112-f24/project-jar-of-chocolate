@@ -1,0 +1,12 @@
+
+
+```{r}
+library(tidyverse)
+media <- read_csv('../project-jar-of-chocolate/data.csv')
+```
+
+```{r}
+ggplot(media, aes(x=App, fill=Daily_Minutes_Spent))+ 
+  geom_bar()
+```
+
