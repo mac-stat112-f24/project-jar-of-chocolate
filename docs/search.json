@@ -14,7 +14,7 @@
     "href": "report.html",
     "title": "Report",
     "section": "",
-    "text": "Add your report to this file.",
+    "text": "Add your report to this file.\nMotivation, research question, & background What question are you trying to answer? - what is the most used social media app? and how long do individuals spend on it? how does that differ by gender? relationship status? other variables? Why is it important or interesting? - it gives us insight into usage patterns. this could help us better understand why individuals use different social media apps and what factors might be contributing to or detracting from their usage.\nIf needed, What background information is necessary here? If needed, What assumptions or terms or acronyms need to be clarified?\nData Data collection: What was collected, When was it collected, Why was it collected, How was it collected originally, Who collected it Data acquisition: Where / how did you get the data? What is the source? - We got the data from Kaggle. Data understanding: How much data do you have? What types of measurements? Anything you needed to clean before getting started? - For the sake of simplicity, we renamed many of the variables in the dataset (often shortening them). Data insights It’s your job to explicitly identify and discuss key insights. Don’t simply present the audience with some code and output and expect them to do that work. Specifically:\nWhat are the important takeaways from the data? What was interesting? Why do these takeaways matter? Was there anything surprising? Overall, what do you want the audience to walk away with? What do you want them to understand about your data and research questions?!?\nConclusions / Big Picture How do the insights connect to answer your research question? What improvements might someone make to your analysis? Are there any limitations or weaknesses of your data / analysis?",
     "crumbs": [
       "Report"
     ]
@@ -28,6 +28,17 @@
     "crumbs": [
       "Appendices",
       "Proposal"
+    ]
+  },
+  {
+    "objectID": "sketch.html",
+    "href": "sketch.html",
+    "title": "Sketch",
+    "section": "",
+    "text": "Sketch for project",
+    "crumbs": [
+      "Appendices",
+      "Sketch"
     ]
   }
 ]
