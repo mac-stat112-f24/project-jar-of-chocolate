@@ -9,7 +9,7 @@ project:
   output-dir: docs
 
 book:
-  title: "write your project title here"
+  title: "Relationships in the online era: An investigation of social media usage patterns by relationship status"
   author: ["Madeleine Kemper", "Justin Chalichemala", "Robert Reiss", "Tanisha Dodla"]
   date: '11/08/2024'
   date-format: full
