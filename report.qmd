@@ -1,19 +1,12 @@
 # Report {.unnumbered}
 
-Add your report to this file.
-
-Motivation, research question, & background
-What question are you trying to answer?
-- what is the most used social media app? and how long do individuals spend on it?  how does that differ by gender? relationship status? other variables?
-Why is it important or interesting?
-- it gives us insight into usage patterns.  this could help us better understand why individuals use different social media apps and what factors might be contributing to or detracting from their usage.  
-If needed, What background information is necessary here?
-If needed, What assumptions or terms or acronyms need to be clarified?
+  In this proposal, we are hoping to investigate how usage of various social media differs by relationship status in addition to  several other questions. We will first determine what the most used social media app is and how long individuals spend on it. Then, we will investigate how that differs by gender and relationship status. Relationship status is a demographic that has rarely been explored as a variable in social media usage statistics. If relationship status is found to influence social media usage time, this could indicate an area for further research. Might, for example, the increased overall happiness of being in a relationship decrease average social media usage time?  Or, might divorced (or single) status lead to a decrease in overall happiness--resulting in an increased dependency on (and thus usage of) social media apps?  
 
 Data
 Data collection: What was collected, When was it collected, Why was it collected, How was it collected originally, Who collected it
-Data acquisition: Where / how did you get the data? What is the source?
-- We got the data from Kaggle.
+
+Our data was acquired from the data repository site "Kaggle".  This dataset consists of usage patterns collected across eight social media platforms--including: Facebook, Pinterest, Reddit, Youtube, Discord, Instagram, Twitter, Snapchat.  There are 481 observations of 21 variables--including demographic questions.       
+
 Data understanding: How much data do you have? What types of measurements? Anything you needed to clean before getting started?
 - For the sake of simplicity, we renamed many of the variables in the dataset (often shortening them).
 Data insights
