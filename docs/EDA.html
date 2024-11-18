@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.4.555">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Appendix A — EDA – Relationships in the online era: An investigation of social media usage patterns by relationship status</title>
+<title>Relationships in the online era: An investigation of social media usage patterns by relationship status - Appendix A — EDA</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -113,13 +113,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./proposal.html">Appendices</a></li><li class="breadcrumb-item"><a href="./EDA.html"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">EDA</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -163,9 +163,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -195,7 +195,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
     </div>
 <!-- main -->
@@ -226,7 +226,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
 ✔ dplyr     1.1.4     ✔ readr     2.1.5
 ✔ forcats   1.0.0     ✔ stringr   1.5.1
-✔ ggplot2   3.4.4     ✔ tibble    3.2.1
+✔ ggplot2   3.5.1     ✔ tibble    3.2.1
 ✔ lubridate 1.9.3     ✔ tidyr     1.3.1
 ✔ purrr     1.0.2     
 ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
@@ -259,7 +259,7 @@ dbl (13): 1. What is your age?, 9. How often do you find yourself using Soci...
 <span id="cb6-5"><a href="#cb6-5"></a>   <span class="fu">mutate</span>(<span class="at">App =</span> <span class="fu">fct_relevel</span>(App, <span class="fu">c</span>(<span class="st">'Reddit'</span>, <span class="st">'Discord'</span>, <span class="st">'YouTube'</span>,  <span class="st">'Instagram'</span>, <span class="st">'Twitter'</span>, <span class="st">'Pinterest'</span>, <span class="st">'Facebook'</span>)))<span class="sc">%&gt;%</span></span>
 <span id="cb6-6"><a href="#cb6-6"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>App, <span class="at">fill=</span>Gender))<span class="sc">+</span></span>
 <span id="cb6-7"><a href="#cb6-7"></a>  <span class="fu">geom_bar</span>(<span class="at">position=</span><span class="st">'fill'</span>, <span class="at">alpha=</span><span class="fl">0.85</span>)<span class="sc">+</span></span>
-<span id="cb6-8"><a href="#cb6-8"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">'Social Media Platform'</span>, <span class="at">y=</span><span class="st">'Propotion of Use by Gender'</span>, <span class="at">title=</span><span class="st">'Use of Social Media Platform by Gender'</span>)<span class="sc">+</span></span>
+<span id="cb6-8"><a href="#cb6-8"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">'Social Media Platform'</span>, <span class="at">y=</span><span class="st">'Propotion of Use by Gender'</span>, <span class="at">title=</span><span class="st">'Use of Social Media Platform by Gender'</span>, <span class="at">caption =</span> <span class="st">'Plot created by Tanisha Dodla'</span>)<span class="sc">+</span></span>
 <span id="cb6-9"><a href="#cb6-9"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
 <span id="cb6-10"><a href="#cb6-10"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Female"</span> <span class="ot">=</span> <span class="st">"#B0476E"</span>, <span class="st">"Male"</span> <span class="ot">=</span> <span class="st">"#C9732A"</span>)) <span class="sc">+</span></span>
 <span id="cb6-11"><a href="#cb6-11"></a>  <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">size=</span><span class="dv">12</span>, <span class="at">family=</span><span class="st">'serif'</span>), <span class="at">plot.title=</span><span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))<span class="sc">+</span></span>
@@ -267,34 +267,37 @@ dbl (13): 1. What is your age?, 9. How often do you find yourself using Soci...
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="EDA_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="EDA_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" alt="This is a series of side by side bar plots with social media platforms on the X-axis and proportion of use by gender on the Y-axis. It appears that overall there is a higher proportion of males that use social media than females across all platforms. The most popular platform used by females is facebook, and the most popular platform for men is Reddit, according to this vizualization." width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="co">#Total </span></span>
-<span id="cb7-2"><a href="#cb7-2"></a>media <span class="sc">%&gt;%</span> </span>
-<span id="cb7-3"><a href="#cb7-3"></a>  <span class="fu">mutate</span>(<span class="at">ig =</span> <span class="fu">str_detect</span>(App, <span class="st">'Instagram'</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb7-4"><a href="#cb7-4"></a>  <span class="fu">mutate</span>(<span class="at">fb=</span><span class="fu">str_detect</span>(App, <span class="st">'Facebook'</span>))<span class="sc">%&gt;%</span></span>
-<span id="cb7-5"><a href="#cb7-5"></a>  <span class="fu">mutate</span>(<span class="at">tw =</span><span class="fu">str_detect</span>(App, <span class="st">'Twitter'</span>))<span class="sc">%&gt;%</span></span>
-<span id="cb7-6"><a href="#cb7-6"></a>  <span class="fu">mutate</span>(<span class="at">tt=</span><span class="fu">str_detect</span>(App, <span class="st">'TikTok'</span>))<span class="sc">%&gt;%</span></span>
-<span id="cb7-7"><a href="#cb7-7"></a>  <span class="fu">mutate</span>(<span class="at">dc =</span><span class="fu">str_detect</span>(App, <span class="st">'Discord'</span>))<span class="sc">%&gt;%</span></span>
-<span id="cb7-8"><a href="#cb7-8"></a>  <span class="fu">mutate</span>(<span class="at">yt=</span><span class="fu">str_detect</span>(App, <span class="st">'YouTube'</span>))<span class="sc">%&gt;%</span></span>
-<span id="cb7-9"><a href="#cb7-9"></a>  <span class="fu">mutate</span>(<span class="at">sc=</span><span class="fu">str_detect</span>(App, <span class="st">'Snapchat'</span>))<span class="sc">%&gt;%</span></span>
-<span id="cb7-10"><a href="#cb7-10"></a>  <span class="fu">mutate</span>(<span class="at">pi=</span><span class="fu">str_detect</span>(App, <span class="st">'Pinterest'</span>))<span class="sc">%&gt;%</span></span>
-<span id="cb7-11"><a href="#cb7-11"></a>  <span class="fu">group_by</span>(Gender)<span class="sc">%&gt;%</span></span>
-<span id="cb7-12"><a href="#cb7-12"></a>  <span class="fu">summarize</span>(<span class="at">Instagram=</span><span class="fu">sum</span>(ig), <span class="at">Facebook=</span><span class="fu">sum</span>(fb), <span class="at">Twitter=</span><span class="fu">sum</span>(tw), <span class="at">TikTok=</span><span class="fu">sum</span>(tt), <span class="at">Discord=</span><span class="fu">sum</span>(dc), <span class="at">Snapchat=</span><span class="fu">sum</span>(sc), <span class="at">Pinterest=</span><span class="fu">sum</span>(pi))<span class="sc">%&gt;%</span></span>
-<span id="cb7-13"><a href="#cb7-13"></a>  <span class="fu">filter</span>(Gender <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'Female'</span>, <span class="st">'Male'</span>))<span class="sc">%&gt;%</span></span>
-<span id="cb7-14"><a href="#cb7-14"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>Gender, <span class="at">names_to =</span> <span class="st">"Platform"</span>, <span class="at">values_to =</span> <span class="st">"count"</span>)<span class="sc">%&gt;%</span></span>
-<span id="cb7-15"><a href="#cb7-15"></a>  <span class="fu">mutate</span>(<span class="at">Platform =</span> <span class="fu">fct_relevel</span>(Platform, <span class="fu">c</span>( <span class="st">'Discord'</span>, <span class="st">'Twitter'</span>,  <span class="st">'Facebook'</span>, <span class="st">'Instagram'</span>, <span class="st">'Snapchat'</span>, <span class="st">'TikTok'</span>,<span class="st">'Pinterest'</span>)))<span class="sc">%&gt;%</span></span>
-<span id="cb7-16"><a href="#cb7-16"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>Platform, <span class="at">fill=</span>Gender, <span class="at">y=</span>count))<span class="sc">+</span></span>
-<span id="cb7-17"><a href="#cb7-17"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position=</span><span class="st">'fill'</span> , <span class="at">alpha=</span><span class="fl">0.85</span>)<span class="sc">+</span></span>
-<span id="cb7-18"><a href="#cb7-18"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">'Social Media Platform'</span>, <span class="at">y=</span><span class="st">'Propotion of Use by Gender'</span>, <span class="at">title=</span><span class="st">'Use of Social Media Platform by Gender'</span>)<span class="sc">+</span></span>
-<span id="cb7-19"><a href="#cb7-19"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
-<span id="cb7-20"><a href="#cb7-20"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Female"</span> <span class="ot">=</span> <span class="st">"#B0476E"</span>, <span class="st">"Male"</span> <span class="ot">=</span> <span class="st">"#C9732A"</span>)) <span class="sc">+</span></span>
-<span id="cb7-21"><a href="#cb7-21"></a>  <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">size=</span><span class="dv">12</span>, <span class="at">family=</span><span class="st">'serif'</span>), <span class="at">plot.title=</span><span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))<span class="sc">+</span></span>
-<span id="cb7-22"><a href="#cb7-22"></a>  <span class="fu">theme</span>(<span class="at">panel.grid.major =</span> <span class="fu">element_blank</span>(), <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="co">#| fig-alt: 'This is a series of side by side bar plots with social media platforms on the X-axis and proportion of use by gender on the Y-axis. This vizualization was created by using data from people who recorded multiple app usage, instead of just one platform. It appears that overall there is a slightly higher proportion of females that use social media than males across all platforms. The most popular platform used by females is Pinterest, and the most popular platform by men is Discord, according to this vizualization.' </span></span>
+<span id="cb7-2"><a href="#cb7-2"></a></span>
+<span id="cb7-3"><a href="#cb7-3"></a></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="co">#Total </span></span>
+<span id="cb7-5"><a href="#cb7-5"></a>media <span class="sc">%&gt;%</span> </span>
+<span id="cb7-6"><a href="#cb7-6"></a>  <span class="fu">mutate</span>(<span class="at">ig =</span> <span class="fu">str_detect</span>(App, <span class="st">'Instagram'</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-7"><a href="#cb7-7"></a>  <span class="fu">mutate</span>(<span class="at">fb=</span><span class="fu">str_detect</span>(App, <span class="st">'Facebook'</span>))<span class="sc">%&gt;%</span></span>
+<span id="cb7-8"><a href="#cb7-8"></a>  <span class="fu">mutate</span>(<span class="at">tw =</span><span class="fu">str_detect</span>(App, <span class="st">'Twitter'</span>))<span class="sc">%&gt;%</span></span>
+<span id="cb7-9"><a href="#cb7-9"></a>  <span class="fu">mutate</span>(<span class="at">tt=</span><span class="fu">str_detect</span>(App, <span class="st">'TikTok'</span>))<span class="sc">%&gt;%</span></span>
+<span id="cb7-10"><a href="#cb7-10"></a>  <span class="fu">mutate</span>(<span class="at">dc =</span><span class="fu">str_detect</span>(App, <span class="st">'Discord'</span>))<span class="sc">%&gt;%</span></span>
+<span id="cb7-11"><a href="#cb7-11"></a>  <span class="fu">mutate</span>(<span class="at">yt=</span><span class="fu">str_detect</span>(App, <span class="st">'YouTube'</span>))<span class="sc">%&gt;%</span></span>
+<span id="cb7-12"><a href="#cb7-12"></a>  <span class="fu">mutate</span>(<span class="at">sc=</span><span class="fu">str_detect</span>(App, <span class="st">'Snapchat'</span>))<span class="sc">%&gt;%</span></span>
+<span id="cb7-13"><a href="#cb7-13"></a>  <span class="fu">mutate</span>(<span class="at">pi=</span><span class="fu">str_detect</span>(App, <span class="st">'Pinterest'</span>))<span class="sc">%&gt;%</span></span>
+<span id="cb7-14"><a href="#cb7-14"></a>  <span class="fu">group_by</span>(Gender)<span class="sc">%&gt;%</span></span>
+<span id="cb7-15"><a href="#cb7-15"></a>  <span class="fu">summarize</span>(<span class="at">Instagram=</span><span class="fu">sum</span>(ig), <span class="at">Facebook=</span><span class="fu">sum</span>(fb), <span class="at">Twitter=</span><span class="fu">sum</span>(tw), <span class="at">TikTok=</span><span class="fu">sum</span>(tt), <span class="at">Discord=</span><span class="fu">sum</span>(dc), <span class="at">Snapchat=</span><span class="fu">sum</span>(sc), <span class="at">Pinterest=</span><span class="fu">sum</span>(pi))<span class="sc">%&gt;%</span></span>
+<span id="cb7-16"><a href="#cb7-16"></a>  <span class="fu">filter</span>(Gender <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'Female'</span>, <span class="st">'Male'</span>))<span class="sc">%&gt;%</span></span>
+<span id="cb7-17"><a href="#cb7-17"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>Gender, <span class="at">names_to =</span> <span class="st">"Platform"</span>, <span class="at">values_to =</span> <span class="st">"count"</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb7-18"><a href="#cb7-18"></a>  <span class="fu">mutate</span>(<span class="at">Platform =</span> <span class="fu">fct_relevel</span>(Platform, <span class="fu">c</span>( <span class="st">'Discord'</span>, <span class="st">'Twitter'</span>,  <span class="st">'Facebook'</span>, <span class="st">'Instagram'</span>, <span class="st">'Snapchat'</span>, <span class="st">'TikTok'</span>,<span class="st">'Pinterest'</span>)))<span class="sc">%&gt;%</span></span>
+<span id="cb7-19"><a href="#cb7-19"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>Platform, <span class="at">fill=</span>Gender, <span class="at">y=</span>count))<span class="sc">+</span></span>
+<span id="cb7-20"><a href="#cb7-20"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position=</span><span class="st">'fill'</span> , <span class="at">alpha=</span><span class="fl">0.85</span>)<span class="sc">+</span></span>
+<span id="cb7-21"><a href="#cb7-21"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">'Social Media Platform'</span>, <span class="at">y=</span><span class="st">'Propotion of Use by Gender'</span>, <span class="at">title=</span><span class="st">'Use of Social Media Platform by Gender'</span>, <span class="at">caption =</span> <span class="st">'Use of social media by useage of multiple apps. Plot created by Tanisha Dodla'</span>)<span class="sc">+</span></span>
+<span id="cb7-22"><a href="#cb7-22"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
+<span id="cb7-23"><a href="#cb7-23"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Female"</span> <span class="ot">=</span> <span class="st">"#B0476E"</span>, <span class="st">"Male"</span> <span class="ot">=</span> <span class="st">"#C9732A"</span>)) <span class="sc">+</span></span>
+<span id="cb7-24"><a href="#cb7-24"></a>  <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">size=</span><span class="dv">12</span>, <span class="at">family=</span><span class="st">'serif'</span>), <span class="at">plot.title=</span><span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))<span class="sc">+</span></span>
+<span id="cb7-25"><a href="#cb7-25"></a>  <span class="fu">theme</span>(<span class="at">panel.grid.major =</span> <span class="fu">element_blank</span>(), <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -304,20 +307,22 @@ dbl (13): 1. What is your age?, 9. How often do you find yourself using Soci...
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="co">#Time used by gender </span></span>
-<span id="cb8-2"><a href="#cb8-2"></a>media<span class="sc">%&gt;%</span></span>
-<span id="cb8-3"><a href="#cb8-3"></a>  <span class="fu">filter</span>(Gender <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'Female'</span>, <span class="st">'Male'</span>))<span class="sc">%&gt;%</span></span>
-<span id="cb8-4"><a href="#cb8-4"></a>    <span class="fu">mutate</span>(<span class="at">Time=</span><span class="fu">factor</span>(Time))<span class="sc">%&gt;%</span></span>
-<span id="cb8-5"><a href="#cb8-5"></a>  <span class="fu">mutate</span>(<span class="at">Time=</span><span class="fu">fct_relevel</span>(Time, <span class="fu">c</span>(<span class="st">'Less than an Hour'</span>, <span class="st">'Between 1 and 2 hours'</span>, <span class="st">'Between 2 and 3 hours'</span>, <span class="st">'Between 3 and 4 hours'</span>, <span class="st">'Between 4 and 5 hours'</span>, <span class="st">'More than 5 hours'</span>)))<span class="sc">%&gt;%</span></span>
-<span id="cb8-6"><a href="#cb8-6"></a>  <span class="fu">group_by</span>(Gender)<span class="sc">%&gt;%</span></span>
-<span id="cb8-7"><a href="#cb8-7"></a>  <span class="fu">count</span>(Time)<span class="sc">%&gt;%</span></span>
-<span id="cb8-8"><a href="#cb8-8"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>Time, <span class="at">y=</span>n, <span class="at">fill=</span>Gender))<span class="sc">+</span></span>
-<span id="cb8-9"><a href="#cb8-9"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position=</span><span class="st">'fill'</span> , <span class="at">alpha=</span><span class="fl">0.85</span>)<span class="sc">+</span></span>
-<span id="cb8-10"><a href="#cb8-10"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">'Time spent during the day on Social Media'</span>, <span class="at">y=</span><span class="st">'Propotion of Use by Gender'</span>, <span class="at">title=</span><span class="st">'Time on Social Media by Gender'</span>)<span class="sc">+</span></span>
-<span id="cb8-11"><a href="#cb8-11"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
-<span id="cb8-12"><a href="#cb8-12"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Female"</span> <span class="ot">=</span> <span class="st">"#B0476E"</span>, <span class="st">"Male"</span> <span class="ot">=</span> <span class="st">"#C9732A"</span>)) <span class="sc">+</span></span>
-<span id="cb8-13"><a href="#cb8-13"></a>  <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">size=</span><span class="dv">12</span>, <span class="at">family=</span><span class="st">'serif'</span>), <span class="at">plot.title=</span><span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))<span class="sc">+</span></span>
-<span id="cb8-14"><a href="#cb8-14"></a>  <span class="fu">theme</span>(<span class="at">panel.grid.major =</span> <span class="fu">element_blank</span>(), <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="co">#| fig-alt: 'This is a series of side by side bar plots with time spent on social media during the day on the X-axis and proportion of use by gender on the Y-axis. The time ranges between zero and five plus hours on social media. It appears that overall there is a slightly higher proportion of females on social media with 5 + hours being roughly 65% female usage, and less than an hour being 80% male usage.'</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a></span>
+<span id="cb8-3"><a href="#cb8-3"></a><span class="co">#Time used by gender </span></span>
+<span id="cb8-4"><a href="#cb8-4"></a>media<span class="sc">%&gt;%</span></span>
+<span id="cb8-5"><a href="#cb8-5"></a>  <span class="fu">filter</span>(Gender <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'Female'</span>, <span class="st">'Male'</span>))<span class="sc">%&gt;%</span></span>
+<span id="cb8-6"><a href="#cb8-6"></a>    <span class="fu">mutate</span>(<span class="at">Time=</span><span class="fu">factor</span>(Time))<span class="sc">%&gt;%</span></span>
+<span id="cb8-7"><a href="#cb8-7"></a>  <span class="fu">mutate</span>(<span class="at">Time=</span><span class="fu">fct_relevel</span>(Time, <span class="fu">c</span>(<span class="st">'Less than an Hour'</span>, <span class="st">'Between 1 and 2 hours'</span>, <span class="st">'Between 2 and 3 hours'</span>, <span class="st">'Between 3 and 4 hours'</span>, <span class="st">'Between 4 and 5 hours'</span>, <span class="st">'More than 5 hours'</span>)))<span class="sc">%&gt;%</span></span>
+<span id="cb8-8"><a href="#cb8-8"></a>  <span class="fu">group_by</span>(Gender)<span class="sc">%&gt;%</span></span>
+<span id="cb8-9"><a href="#cb8-9"></a>  <span class="fu">count</span>(Time)<span class="sc">%&gt;%</span></span>
+<span id="cb8-10"><a href="#cb8-10"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>Time, <span class="at">y=</span>n, <span class="at">fill=</span>Gender))<span class="sc">+</span></span>
+<span id="cb8-11"><a href="#cb8-11"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position=</span><span class="st">'fill'</span> , <span class="at">alpha=</span><span class="fl">0.85</span>)<span class="sc">+</span></span>
+<span id="cb8-12"><a href="#cb8-12"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">'Time spent during the day on Social Media'</span>, <span class="at">y=</span><span class="st">'Propotion of Use by Gender'</span>, <span class="at">title=</span><span class="st">'Time on Social Media by Gender'</span>, <span class="at">caption =</span> <span class="st">'Plot created by Tanisha Dodla'</span>)<span class="sc">+</span></span>
+<span id="cb8-13"><a href="#cb8-13"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
+<span id="cb8-14"><a href="#cb8-14"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Female"</span> <span class="ot">=</span> <span class="st">"#B0476E"</span>, <span class="st">"Male"</span> <span class="ot">=</span> <span class="st">"#C9732A"</span>)) <span class="sc">+</span></span>
+<span id="cb8-15"><a href="#cb8-15"></a>  <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">size=</span><span class="dv">12</span>, <span class="at">family=</span><span class="st">'serif'</span>), <span class="at">plot.title=</span><span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))<span class="sc">+</span></span>
+<span id="cb8-16"><a href="#cb8-16"></a>  <span class="fu">theme</span>(<span class="at">panel.grid.major =</span> <span class="fu">element_blank</span>(), <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -327,20 +332,23 @@ dbl (13): 1. What is your age?, 9. How often do you find yourself using Soci...
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="co">#Time used by marital status </span></span>
-<span id="cb9-2"><a href="#cb9-2"></a>media<span class="sc">%&gt;%</span></span>
-<span id="cb9-3"><a href="#cb9-3"></a>  <span class="fu">filter</span>(Gender <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'Female'</span>, <span class="st">'Male'</span>))<span class="sc">%&gt;%</span></span>
-<span id="cb9-4"><a href="#cb9-4"></a>  <span class="fu">mutate</span>(<span class="at">Time=</span><span class="fu">factor</span>(Time))<span class="sc">%&gt;%</span></span>
-<span id="cb9-5"><a href="#cb9-5"></a>  <span class="fu">mutate</span>(<span class="at">Time=</span><span class="fu">fct_relevel</span>(Time, <span class="fu">c</span>(<span class="st">'Less than an Hour'</span>, <span class="st">'Between 1 and 2 hours'</span>, <span class="st">'Between 2 and 3 hours'</span>, <span class="st">'Between 3 and 4 hours'</span>, <span class="st">'Between 4 and 5 hours'</span>, <span class="st">'More than 5 hours'</span>)))<span class="sc">%&gt;%</span></span>
-<span id="cb9-6"><a href="#cb9-6"></a>  <span class="fu">group_by</span>(Time)<span class="sc">%&gt;%</span></span>
-<span id="cb9-7"><a href="#cb9-7"></a>  <span class="fu">count</span>(MStat)<span class="sc">%&gt;%</span></span>
-<span id="cb9-8"><a href="#cb9-8"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>Time, <span class="at">y=</span>n, <span class="at">fill=</span>MStat))<span class="sc">+</span></span>
-<span id="cb9-9"><a href="#cb9-9"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">alpha=</span><span class="fl">0.85</span>, <span class="at">position=</span><span class="st">'fill'</span>)<span class="sc">+</span></span>
-<span id="cb9-10"><a href="#cb9-10"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">'Time Spent on Social Media'</span>, <span class="at">y=</span><span class="st">'Propotion of Use by Marital Status'</span>, <span class="at">title=</span><span class="st">'Time on Social Media by Marital Status'</span>, <span class="at">MStat=</span><span class="st">'Marital Status'</span>)<span class="sc">+</span></span>
-<span id="cb9-11"><a href="#cb9-11"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
-<span id="cb9-12"><a href="#cb9-12"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Divorced"</span> <span class="ot">=</span> <span class="st">"#B0476E"</span>, <span class="st">"Married"</span> <span class="ot">=</span> <span class="st">"#C9732A"</span>, <span class="st">'Single'</span> <span class="ot">=</span> <span class="st">'#3C7D3F'</span>, <span class="st">'In a relationship'</span> <span class="ot">=</span> <span class="st">'#4679B3'</span>)) <span class="sc">+</span></span>
-<span id="cb9-13"><a href="#cb9-13"></a>  <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">size=</span><span class="dv">12</span>, <span class="at">family=</span><span class="st">'serif'</span>), <span class="at">plot.title=</span><span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))<span class="sc">+</span></span>
-<span id="cb9-14"><a href="#cb9-14"></a>  <span class="fu">theme</span>(<span class="at">panel.grid.major =</span> <span class="fu">element_blank</span>(), <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="co">#| fig-alt: 'This is a series of side by side bar plots with time spent on social media during the day on the X-axis and proportion of use by marital status on the Y-axis. The time ranges between zero and five plus hours on social media. The marriage status categories are single, married, divorced, or in a relationship. Overall, it appears that those who identify as single have the greatest time spent on social media, with divorced people having the least hours spent, and those in a relationship not far behind, according to this vizualization. It is also important to note that there is only 6 divorced people in this dataset so their social media usage is probably not representative.'</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a></span>
+<span id="cb9-3"><a href="#cb9-3"></a></span>
+<span id="cb9-4"><a href="#cb9-4"></a><span class="co">#Time used by marital status </span></span>
+<span id="cb9-5"><a href="#cb9-5"></a>media<span class="sc">%&gt;%</span></span>
+<span id="cb9-6"><a href="#cb9-6"></a>  <span class="fu">filter</span>(Gender <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'Female'</span>, <span class="st">'Male'</span>))<span class="sc">%&gt;%</span></span>
+<span id="cb9-7"><a href="#cb9-7"></a>  <span class="fu">mutate</span>(<span class="at">Time=</span><span class="fu">factor</span>(Time))<span class="sc">%&gt;%</span></span>
+<span id="cb9-8"><a href="#cb9-8"></a>  <span class="fu">mutate</span>(<span class="at">Time=</span><span class="fu">fct_relevel</span>(Time, <span class="fu">c</span>(<span class="st">'Less than an Hour'</span>, <span class="st">'Between 1 and 2 hours'</span>, <span class="st">'Between 2 and 3 hours'</span>, <span class="st">'Between 3 and 4 hours'</span>, <span class="st">'Between 4 and 5 hours'</span>, <span class="st">'More than 5 hours'</span>)))<span class="sc">%&gt;%</span></span>
+<span id="cb9-9"><a href="#cb9-9"></a>  <span class="fu">group_by</span>(Time)<span class="sc">%&gt;%</span></span>
+<span id="cb9-10"><a href="#cb9-10"></a>  <span class="fu">count</span>(MStat)<span class="sc">%&gt;%</span></span>
+<span id="cb9-11"><a href="#cb9-11"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>Time, <span class="at">y=</span>n, <span class="at">fill=</span>MStat))<span class="sc">+</span></span>
+<span id="cb9-12"><a href="#cb9-12"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">alpha=</span><span class="fl">0.85</span>, <span class="at">position=</span><span class="st">'fill'</span>)<span class="sc">+</span></span>
+<span id="cb9-13"><a href="#cb9-13"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">'Time Spent on Social Media'</span>, <span class="at">y=</span><span class="st">'Propotion of Use by Marital Status'</span>, <span class="at">title=</span><span class="st">'Time on Social Media by Marital Status'</span>, <span class="at">MStat=</span><span class="st">'Marital Status'</span>, <span class="at">caption =</span> <span class="st">'Plot created by Tanisha Dodla'</span>)<span class="sc">+</span></span>
+<span id="cb9-14"><a href="#cb9-14"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
+<span id="cb9-15"><a href="#cb9-15"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Divorced"</span> <span class="ot">=</span> <span class="st">"#B0476E"</span>, <span class="st">"Married"</span> <span class="ot">=</span> <span class="st">"#C9732A"</span>, <span class="st">'Single'</span> <span class="ot">=</span> <span class="st">'#3C7D3F'</span>, <span class="st">'In a relationship'</span> <span class="ot">=</span> <span class="st">'#4679B3'</span>)) <span class="sc">+</span></span>
+<span id="cb9-16"><a href="#cb9-16"></a>  <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">size=</span><span class="dv">12</span>, <span class="at">family=</span><span class="st">'serif'</span>), <span class="at">plot.title=</span><span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))<span class="sc">+</span></span>
+<span id="cb9-17"><a href="#cb9-17"></a>  <span class="fu">theme</span>(<span class="at">panel.grid.major =</span> <span class="fu">element_blank</span>(), <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -534,7 +542,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const onCopySuccess = function(e) {
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -566,29 +585,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
   });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
   const viewSource = window.document.getElementById('quarto-view-source') ||
                      window.document.getElementById('quarto-code-tools-source');
   if (viewSource) {
@@ -647,7 +644,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -993,85 +990,98 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb10-14"><a href="#cb10-14"></a>  <span class="fu">rename</span>(<span class="at">MStat=</span><span class="st">'3. Relationship Status'</span>)</span>
 <span id="cb10-15"><a href="#cb10-15"></a><span class="in">```</span></span>
 <span id="cb10-18"><a href="#cb10-18"></a><span class="in">```{r}</span></span>
-<span id="cb10-19"><a href="#cb10-19"></a><span class="co">#Most used </span></span>
-<span id="cb10-20"><a href="#cb10-20"></a>media<span class="sc">%&gt;%</span></span>
-<span id="cb10-21"><a href="#cb10-21"></a>  <span class="fu">mutate</span>(<span class="at">App =</span> <span class="fu">str_extract</span>(App, <span class="st">"^[^,]+"</span>))<span class="sc">%&gt;%</span></span>
-<span id="cb10-22"><a href="#cb10-22"></a>  <span class="fu">filter</span>(Gender <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'Female'</span>, <span class="st">'Male'</span>))<span class="sc">%&gt;%</span></span>
-<span id="cb10-23"><a href="#cb10-23"></a>   <span class="fu">mutate</span>(<span class="at">App =</span> <span class="fu">fct_relevel</span>(App, <span class="fu">c</span>(<span class="st">'Reddit'</span>, <span class="st">'Discord'</span>, <span class="st">'YouTube'</span>,  <span class="st">'Instagram'</span>, <span class="st">'Twitter'</span>, <span class="st">'Pinterest'</span>, <span class="st">'Facebook'</span>)))<span class="sc">%&gt;%</span></span>
-<span id="cb10-24"><a href="#cb10-24"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>App, <span class="at">fill=</span>Gender))<span class="sc">+</span></span>
-<span id="cb10-25"><a href="#cb10-25"></a>  <span class="fu">geom_bar</span>(<span class="at">position=</span><span class="st">'fill'</span>, <span class="at">alpha=</span><span class="fl">0.85</span>)<span class="sc">+</span></span>
-<span id="cb10-26"><a href="#cb10-26"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">'Social Media Platform'</span>, <span class="at">y=</span><span class="st">'Propotion of Use by Gender'</span>, <span class="at">title=</span><span class="st">'Use of Social Media Platform by Gender'</span>)<span class="sc">+</span></span>
-<span id="cb10-27"><a href="#cb10-27"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
-<span id="cb10-28"><a href="#cb10-28"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Female"</span> <span class="ot">=</span> <span class="st">"#B0476E"</span>, <span class="st">"Male"</span> <span class="ot">=</span> <span class="st">"#C9732A"</span>)) <span class="sc">+</span></span>
-<span id="cb10-29"><a href="#cb10-29"></a>  <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">size=</span><span class="dv">12</span>, <span class="at">family=</span><span class="st">'serif'</span>), <span class="at">plot.title=</span><span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))<span class="sc">+</span></span>
-<span id="cb10-30"><a href="#cb10-30"></a>  <span class="fu">theme</span>(<span class="at">panel.grid.major =</span> <span class="fu">element_blank</span>(), <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>())</span>
-<span id="cb10-31"><a href="#cb10-31"></a><span class="in">```</span></span>
-<span id="cb10-32"><a href="#cb10-32"></a></span>
-<span id="cb10-35"><a href="#cb10-35"></a><span class="in">```{r}</span></span>
-<span id="cb10-36"><a href="#cb10-36"></a><span class="co">#Total </span></span>
-<span id="cb10-37"><a href="#cb10-37"></a>media <span class="sc">%&gt;%</span> </span>
-<span id="cb10-38"><a href="#cb10-38"></a>  <span class="fu">mutate</span>(<span class="at">ig =</span> <span class="fu">str_detect</span>(App, <span class="st">'Instagram'</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb10-39"><a href="#cb10-39"></a>  <span class="fu">mutate</span>(<span class="at">fb=</span><span class="fu">str_detect</span>(App, <span class="st">'Facebook'</span>))<span class="sc">%&gt;%</span></span>
-<span id="cb10-40"><a href="#cb10-40"></a>  <span class="fu">mutate</span>(<span class="at">tw =</span><span class="fu">str_detect</span>(App, <span class="st">'Twitter'</span>))<span class="sc">%&gt;%</span></span>
-<span id="cb10-41"><a href="#cb10-41"></a>  <span class="fu">mutate</span>(<span class="at">tt=</span><span class="fu">str_detect</span>(App, <span class="st">'TikTok'</span>))<span class="sc">%&gt;%</span></span>
-<span id="cb10-42"><a href="#cb10-42"></a>  <span class="fu">mutate</span>(<span class="at">dc =</span><span class="fu">str_detect</span>(App, <span class="st">'Discord'</span>))<span class="sc">%&gt;%</span></span>
-<span id="cb10-43"><a href="#cb10-43"></a>  <span class="fu">mutate</span>(<span class="at">yt=</span><span class="fu">str_detect</span>(App, <span class="st">'YouTube'</span>))<span class="sc">%&gt;%</span></span>
-<span id="cb10-44"><a href="#cb10-44"></a>  <span class="fu">mutate</span>(<span class="at">sc=</span><span class="fu">str_detect</span>(App, <span class="st">'Snapchat'</span>))<span class="sc">%&gt;%</span></span>
-<span id="cb10-45"><a href="#cb10-45"></a>  <span class="fu">mutate</span>(<span class="at">pi=</span><span class="fu">str_detect</span>(App, <span class="st">'Pinterest'</span>))<span class="sc">%&gt;%</span></span>
-<span id="cb10-46"><a href="#cb10-46"></a>  <span class="fu">group_by</span>(Gender)<span class="sc">%&gt;%</span></span>
-<span id="cb10-47"><a href="#cb10-47"></a>  <span class="fu">summarize</span>(<span class="at">Instagram=</span><span class="fu">sum</span>(ig), <span class="at">Facebook=</span><span class="fu">sum</span>(fb), <span class="at">Twitter=</span><span class="fu">sum</span>(tw), <span class="at">TikTok=</span><span class="fu">sum</span>(tt), <span class="at">Discord=</span><span class="fu">sum</span>(dc), <span class="at">Snapchat=</span><span class="fu">sum</span>(sc), <span class="at">Pinterest=</span><span class="fu">sum</span>(pi))<span class="sc">%&gt;%</span></span>
-<span id="cb10-48"><a href="#cb10-48"></a>  <span class="fu">filter</span>(Gender <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'Female'</span>, <span class="st">'Male'</span>))<span class="sc">%&gt;%</span></span>
-<span id="cb10-49"><a href="#cb10-49"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>Gender, <span class="at">names_to =</span> <span class="st">"Platform"</span>, <span class="at">values_to =</span> <span class="st">"count"</span>)<span class="sc">%&gt;%</span></span>
-<span id="cb10-50"><a href="#cb10-50"></a>  <span class="fu">mutate</span>(<span class="at">Platform =</span> <span class="fu">fct_relevel</span>(Platform, <span class="fu">c</span>( <span class="st">'Discord'</span>, <span class="st">'Twitter'</span>,  <span class="st">'Facebook'</span>, <span class="st">'Instagram'</span>, <span class="st">'Snapchat'</span>, <span class="st">'TikTok'</span>,<span class="st">'Pinterest'</span>)))<span class="sc">%&gt;%</span></span>
-<span id="cb10-51"><a href="#cb10-51"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>Platform, <span class="at">fill=</span>Gender, <span class="at">y=</span>count))<span class="sc">+</span></span>
-<span id="cb10-52"><a href="#cb10-52"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position=</span><span class="st">'fill'</span> , <span class="at">alpha=</span><span class="fl">0.85</span>)<span class="sc">+</span></span>
-<span id="cb10-53"><a href="#cb10-53"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">'Social Media Platform'</span>, <span class="at">y=</span><span class="st">'Propotion of Use by Gender'</span>, <span class="at">title=</span><span class="st">'Use of Social Media Platform by Gender'</span>)<span class="sc">+</span></span>
-<span id="cb10-54"><a href="#cb10-54"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
-<span id="cb10-55"><a href="#cb10-55"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Female"</span> <span class="ot">=</span> <span class="st">"#B0476E"</span>, <span class="st">"Male"</span> <span class="ot">=</span> <span class="st">"#C9732A"</span>)) <span class="sc">+</span></span>
-<span id="cb10-56"><a href="#cb10-56"></a>  <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">size=</span><span class="dv">12</span>, <span class="at">family=</span><span class="st">'serif'</span>), <span class="at">plot.title=</span><span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))<span class="sc">+</span></span>
-<span id="cb10-57"><a href="#cb10-57"></a>  <span class="fu">theme</span>(<span class="at">panel.grid.major =</span> <span class="fu">element_blank</span>(), <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>())</span>
-<span id="cb10-58"><a href="#cb10-58"></a><span class="in">```</span></span>
-<span id="cb10-59"><a href="#cb10-59"></a></span>
-<span id="cb10-60"><a href="#cb10-60"></a><span class="in">```{r, fig.width=10}</span></span>
-<span id="cb10-61"><a href="#cb10-61"></a><span class="in">#Time used by gender </span></span>
-<span id="cb10-62"><a href="#cb10-62"></a><span class="in">media%&gt;%</span></span>
-<span id="cb10-63"><a href="#cb10-63"></a><span class="in">  filter(Gender %in% c('Female', 'Male'))%&gt;%</span></span>
-<span id="cb10-64"><a href="#cb10-64"></a><span class="in">    mutate(Time=factor(Time))%&gt;%</span></span>
-<span id="cb10-65"><a href="#cb10-65"></a><span class="in">  mutate(Time=fct_relevel(Time, c('Less than an Hour', 'Between 1 and 2 hours', 'Between 2 and 3 hours', 'Between 3 and 4 hours', 'Between 4 and 5 hours', 'More than 5 hours')))%&gt;%</span></span>
-<span id="cb10-66"><a href="#cb10-66"></a><span class="in">  group_by(Gender)%&gt;%</span></span>
-<span id="cb10-67"><a href="#cb10-67"></a><span class="in">  count(Time)%&gt;%</span></span>
-<span id="cb10-68"><a href="#cb10-68"></a><span class="in">  ggplot(aes(x=Time, y=n, fill=Gender))+</span></span>
-<span id="cb10-69"><a href="#cb10-69"></a><span class="in">  geom_bar(stat = "identity", position='fill' , alpha=0.85)+</span></span>
-<span id="cb10-70"><a href="#cb10-70"></a><span class="in">  labs(x='Time spent during the day on Social Media', y='Propotion of Use by Gender', title='Time on Social Media by Gender')+</span></span>
-<span id="cb10-71"><a href="#cb10-71"></a><span class="in">  theme_minimal()+</span></span>
-<span id="cb10-72"><a href="#cb10-72"></a><span class="in">  scale_fill_manual(values = c("Female" = "#B0476E", "Male" = "#C9732A")) +</span></span>
-<span id="cb10-73"><a href="#cb10-73"></a><span class="in">  theme(text = element_text(hjust = 0.5, size=12, family='serif'), plot.title=element_text(hjust = 0.5))+</span></span>
-<span id="cb10-74"><a href="#cb10-74"></a><span class="in">  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())</span></span>
-<span id="cb10-75"><a href="#cb10-75"></a><span class="in">```</span></span>
-<span id="cb10-76"><a href="#cb10-76"></a></span>
-<span id="cb10-77"><a href="#cb10-77"></a><span class="in">```{r, fig.width=10}</span></span>
-<span id="cb10-78"><a href="#cb10-78"></a><span class="in">#Time used by marital status </span></span>
-<span id="cb10-79"><a href="#cb10-79"></a><span class="in">media%&gt;%</span></span>
-<span id="cb10-80"><a href="#cb10-80"></a><span class="in">  filter(Gender %in% c('Female', 'Male'))%&gt;%</span></span>
-<span id="cb10-81"><a href="#cb10-81"></a><span class="in">  mutate(Time=factor(Time))%&gt;%</span></span>
-<span id="cb10-82"><a href="#cb10-82"></a><span class="in">  mutate(Time=fct_relevel(Time, c('Less than an Hour', 'Between 1 and 2 hours', 'Between 2 and 3 hours', 'Between 3 and 4 hours', 'Between 4 and 5 hours', 'More than 5 hours')))%&gt;%</span></span>
-<span id="cb10-83"><a href="#cb10-83"></a><span class="in">  group_by(Time)%&gt;%</span></span>
-<span id="cb10-84"><a href="#cb10-84"></a><span class="in">  count(MStat)%&gt;%</span></span>
-<span id="cb10-85"><a href="#cb10-85"></a><span class="in">  ggplot(aes(x=Time, y=n, fill=MStat))+</span></span>
-<span id="cb10-86"><a href="#cb10-86"></a><span class="in">  geom_bar(stat = "identity", alpha=0.85, position='fill')+</span></span>
-<span id="cb10-87"><a href="#cb10-87"></a><span class="in">  labs(x='Time Spent on Social Media', y='Propotion of Use by Marital Status', title='Time on Social Media by Marital Status', MStat='Marital Status')+</span></span>
-<span id="cb10-88"><a href="#cb10-88"></a><span class="in">  theme_minimal()+</span></span>
-<span id="cb10-89"><a href="#cb10-89"></a><span class="in">  scale_fill_manual(values = c("Divorced" = "#B0476E", "Married" = "#C9732A", 'Single' = '#3C7D3F', 'In a relationship' = '#4679B3')) +</span></span>
-<span id="cb10-90"><a href="#cb10-90"></a><span class="in">  theme(text = element_text(hjust = 0.5, size=12, family='serif'), plot.title=element_text(hjust = 0.5))+</span></span>
-<span id="cb10-91"><a href="#cb10-91"></a><span class="in">  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())</span></span>
-<span id="cb10-92"><a href="#cb10-92"></a><span class="in">```</span></span>
-<span id="cb10-93"><a href="#cb10-93"></a></span>
-<span id="cb10-94"><a href="#cb10-94"></a></span>
-<span id="cb10-95"><a href="#cb10-95"></a></span>
-<span id="cb10-96"><a href="#cb10-96"></a></span>
-<span id="cb10-97"><a href="#cb10-97"></a></span>
-<span id="cb10-98"><a href="#cb10-98"></a></span>
-</code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb10-19"><a href="#cb10-19"></a><span class="co">#| fig-alt: 'This is a series of side by side bar plots with social media platforms on the X-axis and proportion of use by gender on the Y-axis. It appears that overall there is a higher proportion of males that use social media than females across all platforms. The most popular platform used by females is facebook, and the most popular platform for men is Reddit, according to this vizualization.' </span></span>
+<span id="cb10-20"><a href="#cb10-20"></a></span>
+<span id="cb10-21"><a href="#cb10-21"></a></span>
+<span id="cb10-22"><a href="#cb10-22"></a><span class="co">#Most used </span></span>
+<span id="cb10-23"><a href="#cb10-23"></a>media<span class="sc">%&gt;%</span></span>
+<span id="cb10-24"><a href="#cb10-24"></a>  <span class="fu">mutate</span>(<span class="at">App =</span> <span class="fu">str_extract</span>(App, <span class="st">"^[^,]+"</span>))<span class="sc">%&gt;%</span></span>
+<span id="cb10-25"><a href="#cb10-25"></a>  <span class="fu">filter</span>(Gender <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'Female'</span>, <span class="st">'Male'</span>))<span class="sc">%&gt;%</span></span>
+<span id="cb10-26"><a href="#cb10-26"></a>   <span class="fu">mutate</span>(<span class="at">App =</span> <span class="fu">fct_relevel</span>(App, <span class="fu">c</span>(<span class="st">'Reddit'</span>, <span class="st">'Discord'</span>, <span class="st">'YouTube'</span>,  <span class="st">'Instagram'</span>, <span class="st">'Twitter'</span>, <span class="st">'Pinterest'</span>, <span class="st">'Facebook'</span>)))<span class="sc">%&gt;%</span></span>
+<span id="cb10-27"><a href="#cb10-27"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>App, <span class="at">fill=</span>Gender))<span class="sc">+</span></span>
+<span id="cb10-28"><a href="#cb10-28"></a>  <span class="fu">geom_bar</span>(<span class="at">position=</span><span class="st">'fill'</span>, <span class="at">alpha=</span><span class="fl">0.85</span>)<span class="sc">+</span></span>
+<span id="cb10-29"><a href="#cb10-29"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">'Social Media Platform'</span>, <span class="at">y=</span><span class="st">'Propotion of Use by Gender'</span>, <span class="at">title=</span><span class="st">'Use of Social Media Platform by Gender'</span>, <span class="at">caption =</span> <span class="st">'Plot created by Tanisha Dodla'</span>)<span class="sc">+</span></span>
+<span id="cb10-30"><a href="#cb10-30"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
+<span id="cb10-31"><a href="#cb10-31"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Female"</span> <span class="ot">=</span> <span class="st">"#B0476E"</span>, <span class="st">"Male"</span> <span class="ot">=</span> <span class="st">"#C9732A"</span>)) <span class="sc">+</span></span>
+<span id="cb10-32"><a href="#cb10-32"></a>  <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">size=</span><span class="dv">12</span>, <span class="at">family=</span><span class="st">'serif'</span>), <span class="at">plot.title=</span><span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))<span class="sc">+</span></span>
+<span id="cb10-33"><a href="#cb10-33"></a>  <span class="fu">theme</span>(<span class="at">panel.grid.major =</span> <span class="fu">element_blank</span>(), <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>())</span>
+<span id="cb10-34"><a href="#cb10-34"></a><span class="in">```</span></span>
+<span id="cb10-35"><a href="#cb10-35"></a></span>
+<span id="cb10-38"><a href="#cb10-38"></a><span class="in">```{r}</span></span>
+<span id="cb10-39"><a href="#cb10-39"></a><span class="co">#| fig-alt: 'This is a series of side by side bar plots with social media platforms on the X-axis and proportion of use by gender on the Y-axis. This vizualization was created by using data from people who recorded multiple app usage, instead of just one platform. It appears that overall there is a slightly higher proportion of females that use social media than males across all platforms. The most popular platform used by females is Pinterest, and the most popular platform by men is Discord, according to this vizualization.' </span></span>
+<span id="cb10-40"><a href="#cb10-40"></a></span>
+<span id="cb10-41"><a href="#cb10-41"></a></span>
+<span id="cb10-42"><a href="#cb10-42"></a><span class="co">#Total </span></span>
+<span id="cb10-43"><a href="#cb10-43"></a>media <span class="sc">%&gt;%</span> </span>
+<span id="cb10-44"><a href="#cb10-44"></a>  <span class="fu">mutate</span>(<span class="at">ig =</span> <span class="fu">str_detect</span>(App, <span class="st">'Instagram'</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-45"><a href="#cb10-45"></a>  <span class="fu">mutate</span>(<span class="at">fb=</span><span class="fu">str_detect</span>(App, <span class="st">'Facebook'</span>))<span class="sc">%&gt;%</span></span>
+<span id="cb10-46"><a href="#cb10-46"></a>  <span class="fu">mutate</span>(<span class="at">tw =</span><span class="fu">str_detect</span>(App, <span class="st">'Twitter'</span>))<span class="sc">%&gt;%</span></span>
+<span id="cb10-47"><a href="#cb10-47"></a>  <span class="fu">mutate</span>(<span class="at">tt=</span><span class="fu">str_detect</span>(App, <span class="st">'TikTok'</span>))<span class="sc">%&gt;%</span></span>
+<span id="cb10-48"><a href="#cb10-48"></a>  <span class="fu">mutate</span>(<span class="at">dc =</span><span class="fu">str_detect</span>(App, <span class="st">'Discord'</span>))<span class="sc">%&gt;%</span></span>
+<span id="cb10-49"><a href="#cb10-49"></a>  <span class="fu">mutate</span>(<span class="at">yt=</span><span class="fu">str_detect</span>(App, <span class="st">'YouTube'</span>))<span class="sc">%&gt;%</span></span>
+<span id="cb10-50"><a href="#cb10-50"></a>  <span class="fu">mutate</span>(<span class="at">sc=</span><span class="fu">str_detect</span>(App, <span class="st">'Snapchat'</span>))<span class="sc">%&gt;%</span></span>
+<span id="cb10-51"><a href="#cb10-51"></a>  <span class="fu">mutate</span>(<span class="at">pi=</span><span class="fu">str_detect</span>(App, <span class="st">'Pinterest'</span>))<span class="sc">%&gt;%</span></span>
+<span id="cb10-52"><a href="#cb10-52"></a>  <span class="fu">group_by</span>(Gender)<span class="sc">%&gt;%</span></span>
+<span id="cb10-53"><a href="#cb10-53"></a>  <span class="fu">summarize</span>(<span class="at">Instagram=</span><span class="fu">sum</span>(ig), <span class="at">Facebook=</span><span class="fu">sum</span>(fb), <span class="at">Twitter=</span><span class="fu">sum</span>(tw), <span class="at">TikTok=</span><span class="fu">sum</span>(tt), <span class="at">Discord=</span><span class="fu">sum</span>(dc), <span class="at">Snapchat=</span><span class="fu">sum</span>(sc), <span class="at">Pinterest=</span><span class="fu">sum</span>(pi))<span class="sc">%&gt;%</span></span>
+<span id="cb10-54"><a href="#cb10-54"></a>  <span class="fu">filter</span>(Gender <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'Female'</span>, <span class="st">'Male'</span>))<span class="sc">%&gt;%</span></span>
+<span id="cb10-55"><a href="#cb10-55"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>Gender, <span class="at">names_to =</span> <span class="st">"Platform"</span>, <span class="at">values_to =</span> <span class="st">"count"</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb10-56"><a href="#cb10-56"></a>  <span class="fu">mutate</span>(<span class="at">Platform =</span> <span class="fu">fct_relevel</span>(Platform, <span class="fu">c</span>( <span class="st">'Discord'</span>, <span class="st">'Twitter'</span>,  <span class="st">'Facebook'</span>, <span class="st">'Instagram'</span>, <span class="st">'Snapchat'</span>, <span class="st">'TikTok'</span>,<span class="st">'Pinterest'</span>)))<span class="sc">%&gt;%</span></span>
+<span id="cb10-57"><a href="#cb10-57"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>Platform, <span class="at">fill=</span>Gender, <span class="at">y=</span>count))<span class="sc">+</span></span>
+<span id="cb10-58"><a href="#cb10-58"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position=</span><span class="st">'fill'</span> , <span class="at">alpha=</span><span class="fl">0.85</span>)<span class="sc">+</span></span>
+<span id="cb10-59"><a href="#cb10-59"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">'Social Media Platform'</span>, <span class="at">y=</span><span class="st">'Propotion of Use by Gender'</span>, <span class="at">title=</span><span class="st">'Use of Social Media Platform by Gender'</span>, <span class="at">caption =</span> <span class="st">'Use of social media by useage of multiple apps. Plot created by Tanisha Dodla'</span>)<span class="sc">+</span></span>
+<span id="cb10-60"><a href="#cb10-60"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
+<span id="cb10-61"><a href="#cb10-61"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Female"</span> <span class="ot">=</span> <span class="st">"#B0476E"</span>, <span class="st">"Male"</span> <span class="ot">=</span> <span class="st">"#C9732A"</span>)) <span class="sc">+</span></span>
+<span id="cb10-62"><a href="#cb10-62"></a>  <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">size=</span><span class="dv">12</span>, <span class="at">family=</span><span class="st">'serif'</span>), <span class="at">plot.title=</span><span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))<span class="sc">+</span></span>
+<span id="cb10-63"><a href="#cb10-63"></a>  <span class="fu">theme</span>(<span class="at">panel.grid.major =</span> <span class="fu">element_blank</span>(), <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>())</span>
+<span id="cb10-64"><a href="#cb10-64"></a><span class="in">```</span></span>
+<span id="cb10-65"><a href="#cb10-65"></a></span>
+<span id="cb10-66"><a href="#cb10-66"></a><span class="in">```{r, fig.width=10}</span></span>
+<span id="cb10-67"><a href="#cb10-67"></a></span>
+<span id="cb10-68"><a href="#cb10-68"></a><span class="in">#| fig-alt: 'This is a series of side by side bar plots with time spent on social media during the day on the X-axis and proportion of use by gender on the Y-axis. The time ranges between zero and five plus hours on social media. It appears that overall there is a slightly higher proportion of females on social media with 5 + hours being roughly 65% female usage, and less than an hour being 80% male usage.'</span></span>
+<span id="cb10-69"><a href="#cb10-69"></a></span>
+<span id="cb10-70"><a href="#cb10-70"></a><span class="in">#Time used by gender </span></span>
+<span id="cb10-71"><a href="#cb10-71"></a><span class="in">media%&gt;%</span></span>
+<span id="cb10-72"><a href="#cb10-72"></a><span class="in">  filter(Gender %in% c('Female', 'Male'))%&gt;%</span></span>
+<span id="cb10-73"><a href="#cb10-73"></a><span class="in">    mutate(Time=factor(Time))%&gt;%</span></span>
+<span id="cb10-74"><a href="#cb10-74"></a><span class="in">  mutate(Time=fct_relevel(Time, c('Less than an Hour', 'Between 1 and 2 hours', 'Between 2 and 3 hours', 'Between 3 and 4 hours', 'Between 4 and 5 hours', 'More than 5 hours')))%&gt;%</span></span>
+<span id="cb10-75"><a href="#cb10-75"></a><span class="in">  group_by(Gender)%&gt;%</span></span>
+<span id="cb10-76"><a href="#cb10-76"></a><span class="in">  count(Time)%&gt;%</span></span>
+<span id="cb10-77"><a href="#cb10-77"></a><span class="in">  ggplot(aes(x=Time, y=n, fill=Gender))+</span></span>
+<span id="cb10-78"><a href="#cb10-78"></a><span class="in">  geom_bar(stat = "identity", position='fill' , alpha=0.85)+</span></span>
+<span id="cb10-79"><a href="#cb10-79"></a><span class="in">  labs(x='Time spent during the day on Social Media', y='Propotion of Use by Gender', title='Time on Social Media by Gender', caption = 'Plot created by Tanisha Dodla')+</span></span>
+<span id="cb10-80"><a href="#cb10-80"></a><span class="in">  theme_minimal()+</span></span>
+<span id="cb10-81"><a href="#cb10-81"></a><span class="in">  scale_fill_manual(values = c("Female" = "#B0476E", "Male" = "#C9732A")) +</span></span>
+<span id="cb10-82"><a href="#cb10-82"></a><span class="in">  theme(text = element_text(hjust = 0.5, size=12, family='serif'), plot.title=element_text(hjust = 0.5))+</span></span>
+<span id="cb10-83"><a href="#cb10-83"></a><span class="in">  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())</span></span>
+<span id="cb10-84"><a href="#cb10-84"></a><span class="in">```</span></span>
+<span id="cb10-85"><a href="#cb10-85"></a></span>
+<span id="cb10-86"><a href="#cb10-86"></a><span class="in">```{r, fig.width=10}</span></span>
+<span id="cb10-87"><a href="#cb10-87"></a></span>
+<span id="cb10-88"><a href="#cb10-88"></a><span class="in">#| fig-alt: 'This is a series of side by side bar plots with time spent on social media during the day on the X-axis and proportion of use by marital status on the Y-axis. The time ranges between zero and five plus hours on social media. The marriage status categories are single, married, divorced, or in a relationship. Overall, it appears that those who identify as single have the greatest time spent on social media, with divorced people having the least hours spent, and those in a relationship not far behind, according to this vizualization. It is also important to note that there is only 6 divorced people in this dataset so their social media usage is probably not representative.'</span></span>
+<span id="cb10-89"><a href="#cb10-89"></a></span>
+<span id="cb10-90"><a href="#cb10-90"></a></span>
+<span id="cb10-91"><a href="#cb10-91"></a><span class="in">#Time used by marital status </span></span>
+<span id="cb10-92"><a href="#cb10-92"></a><span class="in">media%&gt;%</span></span>
+<span id="cb10-93"><a href="#cb10-93"></a><span class="in">  filter(Gender %in% c('Female', 'Male'))%&gt;%</span></span>
+<span id="cb10-94"><a href="#cb10-94"></a><span class="in">  mutate(Time=factor(Time))%&gt;%</span></span>
+<span id="cb10-95"><a href="#cb10-95"></a><span class="in">  mutate(Time=fct_relevel(Time, c('Less than an Hour', 'Between 1 and 2 hours', 'Between 2 and 3 hours', 'Between 3 and 4 hours', 'Between 4 and 5 hours', 'More than 5 hours')))%&gt;%</span></span>
+<span id="cb10-96"><a href="#cb10-96"></a><span class="in">  group_by(Time)%&gt;%</span></span>
+<span id="cb10-97"><a href="#cb10-97"></a><span class="in">  count(MStat)%&gt;%</span></span>
+<span id="cb10-98"><a href="#cb10-98"></a><span class="in">  ggplot(aes(x=Time, y=n, fill=MStat))+</span></span>
+<span id="cb10-99"><a href="#cb10-99"></a><span class="in">  geom_bar(stat = "identity", alpha=0.85, position='fill')+</span></span>
+<span id="cb10-100"><a href="#cb10-100"></a><span class="in">  labs(x='Time Spent on Social Media', y='Propotion of Use by Marital Status', title='Time on Social Media by Marital Status', MStat='Marital Status', caption = 'Plot created by Tanisha Dodla')+</span></span>
+<span id="cb10-101"><a href="#cb10-101"></a><span class="in">  theme_minimal()+</span></span>
+<span id="cb10-102"><a href="#cb10-102"></a><span class="in">  scale_fill_manual(values = c("Divorced" = "#B0476E", "Married" = "#C9732A", 'Single' = '#3C7D3F', 'In a relationship' = '#4679B3')) +</span></span>
+<span id="cb10-103"><a href="#cb10-103"></a><span class="in">  theme(text = element_text(hjust = 0.5, size=12, family='serif'), plot.title=element_text(hjust = 0.5))+</span></span>
+<span id="cb10-104"><a href="#cb10-104"></a><span class="in">  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())</span></span>
+<span id="cb10-105"><a href="#cb10-105"></a><span class="in">```</span></span>
+<span id="cb10-106"><a href="#cb10-106"></a></span>
+<span id="cb10-107"><a href="#cb10-107"></a></span>
+<span id="cb10-108"><a href="#cb10-108"></a></span>
+<span id="cb10-109"><a href="#cb10-109"></a></span>
+<span id="cb10-110"><a href="#cb10-110"></a></span>
+<span id="cb10-111"><a href="#cb10-111"></a></span>
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

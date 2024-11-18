@@ -1,7 +1,3 @@
----
-title: 'EDA' 
----
-
 ```{r}
 library(tidyverse)
 media <- read_csv('../project-jar-of-chocolate/data.csv')
@@ -11,6 +7,7 @@ media <- media%>%
   rename(Time='8. What is the average time you spend on social media every day?')%>%
   rename(MStat='3. Relationship Status')
 ```
+
 ```{r}
 #| fig-alt: 'This is a series of side by side bar plots with social media platforms on the X-axis and proportion of use by gender on the Y-axis. It appears that overall there is a higher proportion of males that use social media than females across all platforms. The most popular platform used by females is facebook, and the most popular platform for men is Reddit, according to this vizualization.' 
 
@@ -29,8 +26,8 @@ media%>%
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
 ```
 
-```{r}
 
+```{r}
 #| fig-alt: 'This is a series of side by side bar plots with social media platforms on the X-axis and proportion of use by gender on the Y-axis. This vizualization was created by using data from people who recorded multiple app usage, instead of just one platform. It appears that overall there is a slightly higher proportion of females that use social media than males across all platforms. The most popular platform used by females is Pinterest, and the most popular platform by men is Discord, according to this vizualization.' 
 
 
@@ -58,8 +55,7 @@ media %>%
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
 ```
 
-```{r, fig.width=10}
-
+```{r}
 #| fig-alt: 'This is a series of side by side bar plots with time spent on social media during the day on the X-axis and proportion of use by gender on the Y-axis. The time ranges between zero and five plus hours on social media. It appears that overall there is a slightly higher proportion of females on social media with 5 + hours being roughly 65% female usage, and less than an hour being 80% male usage.'
 
 #Time used by gender 
@@ -98,10 +94,4 @@ media%>%
   theme(text = element_text(hjust = 0.5, size=12, family='serif'), plot.title=element_text(hjust = 0.5))+
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
 ```
-
-
-
-
-
-
 
