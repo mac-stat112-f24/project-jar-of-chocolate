@@ -22,6 +22,7 @@ book:
   appendices:
   - proposal.qmd
   - sketch.qmd
+  - EDA.qmd
 
 
 format:

@@ -1,0 +1,93 @@
+---
+title: 'EDA' 
+---
+
+```{r}
+library(tidyverse)
+media <- read_csv('../project-jar-of-chocolate/data.csv')
+media <- media%>%
+  rename(App = as.factor('7. What social media platforms do you commonly use?'))%>%
+  rename(Gender='2. Gender')%>%
+  rename(Time='8. What is the average time you spend on social media every day?')%>%
+  rename(MStat='3. Relationship Status')
+```
+```{r}
+#Most used 
+media%>%
+  mutate(App = str_extract(App, "^[^,]+"))%>%
+  filter(Gender %in% c('Female', 'Male'))%>%
+   mutate(App = fct_relevel(App, c('Reddit', 'Discord', 'YouTube',  'Instagram', 'Twitter', 'Pinterest', 'Facebook')))%>%
+  ggplot(aes(x=App, fill=Gender))+
+  geom_bar(position='fill', alpha=0.85)+
+  labs(x='Social Media Platform', y='Propotion of Use by Gender', title='Use of Social Media Platform by Gender')+
+  theme_minimal()+
+  scale_fill_manual(values = c("Female" = "#B0476E", "Male" = "#C9732A")) +
+  theme(text = element_text(hjust = 0.5, size=12, family='serif'), plot.title=element_text(hjust = 0.5))+
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
+```
+
+```{r}
+#Total 
+media %>% 
+  mutate(ig = str_detect(App, 'Instagram')) %>% 
+  mutate(fb=str_detect(App, 'Facebook'))%>%
+  mutate(tw =str_detect(App, 'Twitter'))%>%
+  mutate(tt=str_detect(App, 'TikTok'))%>%
+  mutate(dc =str_detect(App, 'Discord'))%>%
+  mutate(yt=str_detect(App, 'YouTube'))%>%
+  mutate(sc=str_detect(App, 'Snapchat'))%>%
+  mutate(pi=str_detect(App, 'Pinterest'))%>%
+  group_by(Gender)%>%
+  summarize(Instagram=sum(ig), Facebook=sum(fb), Twitter=sum(tw), TikTok=sum(tt), Discord=sum(dc), Snapchat=sum(sc), Pinterest=sum(pi))%>%
+  filter(Gender %in% c('Female', 'Male'))%>%
+  pivot_longer(cols = -Gender, names_to = "Platform", values_to = "count")%>%
+  mutate(Platform = fct_relevel(Platform, c( 'Discord', 'Twitter',  'Facebook', 'Instagram', 'Snapchat', 'TikTok','Pinterest')))%>%
+  ggplot(aes(x=Platform, fill=Gender, y=count))+
+  geom_bar(stat = "identity", position='fill' , alpha=0.85)+
+  labs(x='Social Media Platform', y='Propotion of Use by Gender', title='Use of Social Media Platform by Gender')+
+  theme_minimal()+
+  scale_fill_manual(values = c("Female" = "#B0476E", "Male" = "#C9732A")) +
+  theme(text = element_text(hjust = 0.5, size=12, family='serif'), plot.title=element_text(hjust = 0.5))+
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
+```
+
+```{r, fig.width=10}
+#Time used by gender 
+media%>%
+  filter(Gender %in% c('Female', 'Male'))%>%
+    mutate(Time=factor(Time))%>%
+  mutate(Time=fct_relevel(Time, c('Less than an Hour', 'Between 1 and 2 hours', 'Between 2 and 3 hours', 'Between 3 and 4 hours', 'Between 4 and 5 hours', 'More than 5 hours')))%>%
+  group_by(Gender)%>%
+  count(Time)%>%
+  ggplot(aes(x=Time, y=n, fill=Gender))+
+  geom_bar(stat = "identity", position='fill' , alpha=0.85)+
+  labs(x='Time spent during the day on Social Media', y='Propotion of Use by Gender', title='Time on Social Media by Gender')+
+  theme_minimal()+
+  scale_fill_manual(values = c("Female" = "#B0476E", "Male" = "#C9732A")) +
+  theme(text = element_text(hjust = 0.5, size=12, family='serif'), plot.title=element_text(hjust = 0.5))+
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
+```
+
+```{r, fig.width=10}
+#Time used by marital status 
+media%>%
+  filter(Gender %in% c('Female', 'Male'))%>%
+  mutate(Time=factor(Time))%>%
+  mutate(Time=fct_relevel(Time, c('Less than an Hour', 'Between 1 and 2 hours', 'Between 2 and 3 hours', 'Between 3 and 4 hours', 'Between 4 and 5 hours', 'More than 5 hours')))%>%
+  group_by(Time)%>%
+  count(MStat)%>%
+  ggplot(aes(x=Time, y=n, fill=MStat))+
+  geom_bar(stat = "identity", alpha=0.85, position='fill')+
+  labs(x='Time Spent on Social Media', y='Propotion of Use by Marital Status', title='Time on Social Media by Marital Status', MStat='Marital Status')+
+  theme_minimal()+
+  scale_fill_manual(values = c("Divorced" = "#B0476E", "Married" = "#C9732A", 'Single' = '#3C7D3F', 'In a relationship' = '#4679B3')) +
+  theme(text = element_text(hjust = 0.5, size=12, family='serif'), plot.title=element_text(hjust = 0.5))+
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
+```
+
+
+
+
+
+
+
