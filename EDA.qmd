@@ -11,6 +11,7 @@ media <- media%>%
   rename(Time='8. What is the average time you spend on social media every day?')%>%
   rename(MStat='3. Relationship Status')
 ```
+
 ```{r}
 #Most used 
 media%>%
@@ -37,11 +38,12 @@ media %>%
   mutate(yt=str_detect(App, 'YouTube'))%>%
   mutate(sc=str_detect(App, 'Snapchat'))%>%
   mutate(pi=str_detect(App, 'Pinterest'))%>%
+  mutate(re=str_detect(App, 'Reddit'))%>%
   group_by(Gender)%>%
-  summarize(Instagram=sum(ig), Facebook=sum(fb), Twitter=sum(tw), TikTok=sum(tt), Discord=sum(dc), Snapchat=sum(sc), Pinterest=sum(pi))%>%
+  summarize(Instagram=sum(ig), Facebook=sum(fb), Twitter=sum(tw), TikTok=sum(tt), Discord=sum(dc), Snapchat=sum(sc), Pinterest=sum(pi), Reddit=sum(re))%>%
   filter(Gender %in% c('Female', 'Male'))%>%
   pivot_longer(cols = -Gender, names_to = "Platform", values_to = "count")%>%
-  mutate(Platform = fct_relevel(Platform, c( 'Discord', 'Twitter',  'Facebook', 'Instagram', 'Snapchat', 'TikTok','Pinterest')))%>%
+  mutate(Platform = fct_relevel(Platform, c( 'Reddit', 'Discord', 'Twitter',  'Facebook', 'Instagram', 'Snapchat', 'TikTok','Pinterest')))%>%
   ggplot(aes(x=Platform, fill=Gender, y=count))+
   geom_bar(stat = "identity", position='fill' , alpha=0.85)+
   labs(x='Social Media Platform', y='Propotion of Use by Gender', title='Use of Social Media Platform by Gender')+
