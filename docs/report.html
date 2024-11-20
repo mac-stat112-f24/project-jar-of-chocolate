@@ -947,68 +947,70 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-38"><a href="#cb1-38"></a><span class="in">  ggplot(aes(x=Time, y=n, fill=MStat))+</span></span>
 <span id="cb1-39"><a href="#cb1-39"></a><span class="in">  geom_bar(stat = "identity", alpha=0.85, position='fill')+</span></span>
 <span id="cb1-40"><a href="#cb1-40"></a><span class="in">  labs(x='Time Spent on Social Media', y='Propotion of Use by Marital Status', title='Fig. 1: Time on Social Media by Marital Status', MStat='Marital Status', caption = 'Plot created by Tanisha Dodla')+</span></span>
-<span id="cb1-41"><a href="#cb1-41"></a><span class="in">  theme_minimal()+</span></span>
-<span id="cb1-42"><a href="#cb1-42"></a><span class="in">  scale_fill_manual(values = c("Divorced" = "#B0476E", "Married" = "#C9732A", 'Single' = '#3C7D3F', 'In a relationship' = '#4679B3')) +</span></span>
-<span id="cb1-43"><a href="#cb1-43"></a><span class="in">  theme(text = element_text(hjust = 0.5, size=12, family='serif'), plot.title=element_text(hjust = 0.5))+</span></span>
-<span id="cb1-44"><a href="#cb1-44"></a><span class="in">  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())</span></span>
-<span id="cb1-45"><a href="#cb1-45"></a><span class="in">```</span></span>
-<span id="cb1-46"><a href="#cb1-46"></a></span>
+<span id="cb1-41"><a href="#cb1-41"></a><span class="in">  labs(x='Time Spent on Social Media', y='Propotion of Use by Marital Status', MStat = 'Marital Status', title='Time on Social Media by Marital Status', caption = 'Plot created by Tanisha Dodla')+</span></span>
+<span id="cb1-42"><a href="#cb1-42"></a><span class="in">  theme_minimal()+</span></span>
+<span id="cb1-43"><a href="#cb1-43"></a><span class="in">  scale_fill_manual(values = c("Divorced" = "#B0476E", "Married" = "#C9732A", 'Single' = '#3C7D3F', 'In a relationship' = '#4679B3')) +</span></span>
+<span id="cb1-44"><a href="#cb1-44"></a><span class="in">  theme(text = element_text(hjust = 0.5, size=12, family='serif'), plot.title=element_text(hjust = 0.5))+</span></span>
+<span id="cb1-45"><a href="#cb1-45"></a><span class="in">  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())</span></span>
+<span id="cb1-46"><a href="#cb1-46"></a><span class="in">```</span></span>
 <span id="cb1-47"><a href="#cb1-47"></a></span>
-<span id="cb1-48"><a href="#cb1-48"></a>When considering gender-based splits in usage, we see that men use Discord, Reddit, and Twitter more, while Facebook, Instagram, Snapchat, TikTok, and Pinterest are used more by women (see Fig.3).  Additionally, women spent overall more time on social media platforms than men (see Fig.2).  The differences in usage by platform likely demonstrate a gender-based preference for different platforms and also might indicate something about gender relations on different platforms--i.e. whether there is any sort of sexist culture on a given platform.  The fact that women use social media platforms far more than men is fairly suprising and indicates an area for future research--to further investigate additional contributing factors. </span>
-<span id="cb1-49"><a href="#cb1-49"></a></span>
-<span id="cb1-50"><a href="#cb1-50"></a><span class="in">```{r, fig.width=10, echo=FALSE}</span></span>
-<span id="cb1-51"><a href="#cb1-51"></a></span>
-<span id="cb1-52"><a href="#cb1-52"></a><span class="in">#| fig-alt: 'This is a series of side by side bar plots with time spent on social media during the day on the X-axis and proportion of use by gender on the Y-axis. The time ranges between zero and five plus hours on social media. It appears that overall there is a slightly higher proportion of females on social media with 5 + hours being roughly 65% female usage, and less than an hour being 80% male usage.'</span></span>
-<span id="cb1-53"><a href="#cb1-53"></a></span>
-<span id="cb1-54"><a href="#cb1-54"></a><span class="in">#Time used by gender </span></span>
-<span id="cb1-55"><a href="#cb1-55"></a><span class="in">media%&gt;%</span></span>
-<span id="cb1-56"><a href="#cb1-56"></a><span class="in">  filter(Gender %in% c('Female', 'Male'))%&gt;%</span></span>
-<span id="cb1-57"><a href="#cb1-57"></a><span class="in">    mutate(Time=factor(Time))%&gt;%</span></span>
-<span id="cb1-58"><a href="#cb1-58"></a><span class="in">  mutate(Time=fct_relevel(Time, c('Less than an Hour', 'Between 1 and 2 hours', 'Between 2 and 3 hours', 'Between 3 and 4 hours', 'Between 4 and 5 hours', 'More than 5 hours')))%&gt;%</span></span>
-<span id="cb1-59"><a href="#cb1-59"></a><span class="in">  group_by(Gender)%&gt;%</span></span>
-<span id="cb1-60"><a href="#cb1-60"></a><span class="in">  count(Time)%&gt;%</span></span>
-<span id="cb1-61"><a href="#cb1-61"></a><span class="in">  ggplot(aes(x=Time, y=n, fill=Gender))+</span></span>
-<span id="cb1-62"><a href="#cb1-62"></a><span class="in">  geom_bar(stat = "identity", position='fill' , alpha=0.85)+</span></span>
-<span id="cb1-63"><a href="#cb1-63"></a><span class="in">  labs(x='Time spent during the day on Social Media', y='Propotion of Use by Gender', title='Fig. 2: Time on Social Media by Gender', caption = 'Plot created by Tanisha Dodla')+</span></span>
-<span id="cb1-64"><a href="#cb1-64"></a><span class="in">  theme_minimal()+</span></span>
-<span id="cb1-65"><a href="#cb1-65"></a><span class="in">  scale_fill_manual(values = c("Female" = "#B0476E", "Male" = "#C9732A")) +</span></span>
-<span id="cb1-66"><a href="#cb1-66"></a><span class="in">  theme(text = element_text(hjust = 0.5, size=12, family='serif'), plot.title=element_text(hjust = 0.5))+</span></span>
-<span id="cb1-67"><a href="#cb1-67"></a><span class="in">  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())</span></span>
-<span id="cb1-68"><a href="#cb1-68"></a><span class="in">```</span></span>
-<span id="cb1-69"><a href="#cb1-69"></a></span>
-<span id="cb1-70"><a href="#cb1-70"></a><span class="in">```{r, echo=FALSE}</span></span>
-<span id="cb1-71"><a href="#cb1-71"></a></span>
-<span id="cb1-72"><a href="#cb1-72"></a><span class="in">#| fig-alt: 'This is a series of side by side bar plots with social media platforms on the X-axis and proportion of use by gender on the Y-axis. This vizualization was created by using data from people who recorded multiple app usage, instead of just one platform. It appears that overall there is a slightly higher proportion of females that use social media than males across all platforms. The most popular platform used by females is Pinterest, and the most popular platform by men is Discord, according to this vizualization.' </span></span>
-<span id="cb1-73"><a href="#cb1-73"></a></span>
+<span id="cb1-48"><a href="#cb1-48"></a></span>
+<span id="cb1-49"><a href="#cb1-49"></a>When considering gender-based splits in usage, we see that men use Discord, Reddit, and Twitter more, while Facebook, Instagram, Snapchat, TikTok, and Pinterest are used more by women (see Fig.3).  Additionally, women spent overall more time on social media platforms than men (see Fig.2).  The differences in usage by platform likely demonstrate a gender-based preference for different platforms and also might indicate something about gender relations on different platforms--i.e. whether there is any sort of sexist culture on a given platform.  The fact that women use social media platforms far more than men is fairly suprising and indicates an area for future research--to further investigate additional contributing factors. </span>
+<span id="cb1-50"><a href="#cb1-50"></a></span>
+<span id="cb1-51"><a href="#cb1-51"></a><span class="in">```{r, fig.width=10, echo=FALSE}</span></span>
+<span id="cb1-52"><a href="#cb1-52"></a></span>
+<span id="cb1-53"><a href="#cb1-53"></a><span class="in">#| fig-alt: 'This is a series of side by side bar plots with time spent on social media during the day on the X-axis and proportion of use by gender on the Y-axis. The time ranges between zero and five plus hours on social media. It appears that overall there is a slightly higher proportion of females on social media with 5 + hours being roughly 65% female usage, and less than an hour being 80% male usage.'</span></span>
+<span id="cb1-54"><a href="#cb1-54"></a></span>
+<span id="cb1-55"><a href="#cb1-55"></a><span class="in">#Time used by gender </span></span>
+<span id="cb1-56"><a href="#cb1-56"></a><span class="in">media%&gt;%</span></span>
+<span id="cb1-57"><a href="#cb1-57"></a><span class="in">  filter(Gender %in% c('Female', 'Male'))%&gt;%</span></span>
+<span id="cb1-58"><a href="#cb1-58"></a><span class="in">    mutate(Time=factor(Time))%&gt;%</span></span>
+<span id="cb1-59"><a href="#cb1-59"></a><span class="in">  mutate(Time=fct_relevel(Time, c('Less than an Hour', 'Between 1 and 2 hours', 'Between 2 and 3 hours', 'Between 3 and 4 hours', 'Between 4 and 5 hours', 'More than 5 hours')))%&gt;%</span></span>
+<span id="cb1-60"><a href="#cb1-60"></a><span class="in">  group_by(Gender)%&gt;%</span></span>
+<span id="cb1-61"><a href="#cb1-61"></a><span class="in">  count(Time)%&gt;%</span></span>
+<span id="cb1-62"><a href="#cb1-62"></a><span class="in">  ggplot(aes(x=Time, y=n, fill=Gender))+</span></span>
+<span id="cb1-63"><a href="#cb1-63"></a><span class="in">  geom_bar(stat = "identity", position='fill' , alpha=0.85)+</span></span>
+<span id="cb1-64"><a href="#cb1-64"></a><span class="in">  labs(x='Time spent during the day on Social Media', y='Propotion of Use by Gender', title='Fig. 2: Time on Social Media by Gender', caption = 'Plot created by Tanisha Dodla')+</span></span>
+<span id="cb1-65"><a href="#cb1-65"></a><span class="in">  theme_minimal()+</span></span>
+<span id="cb1-66"><a href="#cb1-66"></a><span class="in">  scale_fill_manual(values = c("Female" = "#B0476E", "Male" = "#C9732A")) +</span></span>
+<span id="cb1-67"><a href="#cb1-67"></a><span class="in">  theme(text = element_text(hjust = 0.5, size=12, family='serif'), plot.title=element_text(hjust = 0.5))+</span></span>
+<span id="cb1-68"><a href="#cb1-68"></a><span class="in">  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())</span></span>
+<span id="cb1-69"><a href="#cb1-69"></a><span class="in">```</span></span>
+<span id="cb1-70"><a href="#cb1-70"></a></span>
+<span id="cb1-71"><a href="#cb1-71"></a><span class="in">```{r, echo=FALSE}</span></span>
+<span id="cb1-72"><a href="#cb1-72"></a></span>
+<span id="cb1-73"><a href="#cb1-73"></a><span class="in">#| fig-alt: 'This is a series of side by side bar plots with social media platforms on the X-axis and proportion of use by gender on the Y-axis. This vizualization was created by using data from people who recorded multiple app usage, instead of just one platform. It appears that overall there is a slightly higher proportion of females that use social media than males across all platforms. The most popular platform used by females is Pinterest, and the most popular platform by men is Discord, according to this vizualization.' </span></span>
 <span id="cb1-74"><a href="#cb1-74"></a></span>
-<span id="cb1-75"><a href="#cb1-75"></a><span class="in">#Total </span></span>
-<span id="cb1-76"><a href="#cb1-76"></a><span class="in">media %&gt;% </span></span>
-<span id="cb1-77"><a href="#cb1-77"></a><span class="in">  mutate(ig = str_detect(App, 'Instagram')) %&gt;% </span></span>
-<span id="cb1-78"><a href="#cb1-78"></a><span class="in">  mutate(fb=str_detect(App, 'Facebook'))%&gt;%</span></span>
-<span id="cb1-79"><a href="#cb1-79"></a><span class="in">  mutate(tw =str_detect(App, 'Twitter'))%&gt;%</span></span>
-<span id="cb1-80"><a href="#cb1-80"></a><span class="in">  mutate(tt=str_detect(App, 'TikTok'))%&gt;%</span></span>
-<span id="cb1-81"><a href="#cb1-81"></a><span class="in">  mutate(dc =str_detect(App, 'Discord'))%&gt;%</span></span>
-<span id="cb1-82"><a href="#cb1-82"></a><span class="in">  mutate(yt=str_detect(App, 'YouTube'))%&gt;%</span></span>
-<span id="cb1-83"><a href="#cb1-83"></a><span class="in">  mutate(sc=str_detect(App, 'Snapchat'))%&gt;%</span></span>
-<span id="cb1-84"><a href="#cb1-84"></a><span class="in">  mutate(pi=str_detect(App, 'Pinterest'))%&gt;%</span></span>
-<span id="cb1-85"><a href="#cb1-85"></a><span class="in">  mutate(re=str_detect(App, 'Reddit'))%&gt;%</span></span>
-<span id="cb1-86"><a href="#cb1-86"></a><span class="in">  group_by(Gender)%&gt;%</span></span>
-<span id="cb1-87"><a href="#cb1-87"></a><span class="in">  summarize(Instagram=sum(ig), Facebook=sum(fb), Twitter=sum(tw), TikTok=sum(tt), Discord=sum(dc), Snapchat=sum(sc), Pinterest=sum(pi), Reddit=sum(re))%&gt;%</span></span>
-<span id="cb1-88"><a href="#cb1-88"></a><span class="in">  filter(Gender %in% c('Female', 'Male'))%&gt;%</span></span>
-<span id="cb1-89"><a href="#cb1-89"></a><span class="in">  pivot_longer(cols = -Gender, names_to = "Platform", values_to = "count")%&gt;%</span></span>
-<span id="cb1-90"><a href="#cb1-90"></a><span class="in">  mutate(Platform = fct_relevel(Platform, c( 'Reddit', 'Discord', 'Twitter',  'Facebook', 'Instagram', 'Snapchat', 'TikTok','Pinterest')))%&gt;%</span></span>
-<span id="cb1-91"><a href="#cb1-91"></a><span class="in">  ggplot(aes(x=Platform, fill=Gender, y=count))+</span></span>
-<span id="cb1-92"><a href="#cb1-92"></a><span class="in">  geom_bar(stat = "identity", position='fill' , alpha=0.85)+</span></span>
-<span id="cb1-93"><a href="#cb1-93"></a><span class="in">  labs(x='Social Media Platform', y='Propotion of Use by Gender', title='Fig. 3: Use of Social Media Platform by Gender', caption = 'Use of social media by useage of multiple apps. Plot created by Tanisha Dodla')+</span></span>
-<span id="cb1-94"><a href="#cb1-94"></a><span class="in">  theme_minimal()+</span></span>
-<span id="cb1-95"><a href="#cb1-95"></a><span class="in">  scale_fill_manual(values = c("Female" = "#B0476E", "Male" = "#C9732A")) +</span></span>
-<span id="cb1-96"><a href="#cb1-96"></a><span class="in">  theme(text = element_text(hjust = 0.5, size=12, family='serif'), plot.title=element_text(hjust = 0.5))+</span></span>
-<span id="cb1-97"><a href="#cb1-97"></a><span class="in">  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())</span></span>
-<span id="cb1-98"><a href="#cb1-98"></a><span class="in">```</span></span>
-<span id="cb1-99"><a href="#cb1-99"></a></span>
-<span id="cb1-100"><a href="#cb1-100"></a></span>
-<span id="cb1-101"><a href="#cb1-101"></a><span class="fu">## Big Picture</span></span>
-<span id="cb1-102"><a href="#cb1-102"></a>Overall, these results indicated reason for further research on this demographic of relationship status given the trends indicating a diffrence in social media usage by relationship status.  For example, now that there is evidence of a relationship, it would be worthwhile revisiting the question we posed at the beginning of this analysis: might there be a decreased reliance on social media as a source of happiness for individuals who are married/in relationships?    Additionally, the results on gender-based differences by social media usage and platform also indicate areas for further research--albeit this is a demographic that has been more researched. There are some limitations in our data.  Namely, we only have 481 individuals who participated--thus our sample is likely not as representative as it could have been.  This was demonstrated, for example, in the fact that only 6 divorced individuals were accounted for.  Next, the source of data was "unverifiable", so it is unclear how reliable this dataset is.  Finally, we have a lot of helpful visualizations, but some people may prefer numerical visualizations (i.e. statistics) that would be helpful to include in future data analyses. </span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb1-75"><a href="#cb1-75"></a></span>
+<span id="cb1-76"><a href="#cb1-76"></a><span class="in">#Total </span></span>
+<span id="cb1-77"><a href="#cb1-77"></a><span class="in">media %&gt;% </span></span>
+<span id="cb1-78"><a href="#cb1-78"></a><span class="in">  mutate(ig = str_detect(App, 'Instagram')) %&gt;% </span></span>
+<span id="cb1-79"><a href="#cb1-79"></a><span class="in">  mutate(fb=str_detect(App, 'Facebook'))%&gt;%</span></span>
+<span id="cb1-80"><a href="#cb1-80"></a><span class="in">  mutate(tw =str_detect(App, 'Twitter'))%&gt;%</span></span>
+<span id="cb1-81"><a href="#cb1-81"></a><span class="in">  mutate(tt=str_detect(App, 'TikTok'))%&gt;%</span></span>
+<span id="cb1-82"><a href="#cb1-82"></a><span class="in">  mutate(dc =str_detect(App, 'Discord'))%&gt;%</span></span>
+<span id="cb1-83"><a href="#cb1-83"></a><span class="in">  mutate(yt=str_detect(App, 'YouTube'))%&gt;%</span></span>
+<span id="cb1-84"><a href="#cb1-84"></a><span class="in">  mutate(sc=str_detect(App, 'Snapchat'))%&gt;%</span></span>
+<span id="cb1-85"><a href="#cb1-85"></a><span class="in">  mutate(pi=str_detect(App, 'Pinterest'))%&gt;%</span></span>
+<span id="cb1-86"><a href="#cb1-86"></a><span class="in">  mutate(re=str_detect(App, 'Reddit'))%&gt;%</span></span>
+<span id="cb1-87"><a href="#cb1-87"></a><span class="in">  group_by(Gender)%&gt;%</span></span>
+<span id="cb1-88"><a href="#cb1-88"></a><span class="in">  summarize(Instagram=sum(ig), Facebook=sum(fb), Twitter=sum(tw), TikTok=sum(tt), Discord=sum(dc), Snapchat=sum(sc), Pinterest=sum(pi), Reddit=sum(re))%&gt;%</span></span>
+<span id="cb1-89"><a href="#cb1-89"></a><span class="in">  filter(Gender %in% c('Female', 'Male'))%&gt;%</span></span>
+<span id="cb1-90"><a href="#cb1-90"></a><span class="in">  pivot_longer(cols = -Gender, names_to = "Platform", values_to = "count")%&gt;%</span></span>
+<span id="cb1-91"><a href="#cb1-91"></a><span class="in">  mutate(Platform = fct_relevel(Platform, c( 'Reddit', 'Discord', 'Twitter',  'Facebook', 'Instagram', 'Snapchat', 'TikTok','Pinterest')))%&gt;%</span></span>
+<span id="cb1-92"><a href="#cb1-92"></a><span class="in">  ggplot(aes(x=Platform, fill=Gender, y=count))+</span></span>
+<span id="cb1-93"><a href="#cb1-93"></a><span class="in">  geom_bar(stat = "identity", position='fill' , alpha=0.85)+</span></span>
+<span id="cb1-94"><a href="#cb1-94"></a><span class="in">  labs(x='Social Media Platform', y='Propotion of Use by Gender', title='Fig. 3: Use of Social Media Platform by Gender', caption = 'Use of social media by useage of multiple apps. Plot created by Tanisha Dodla')+</span></span>
+<span id="cb1-95"><a href="#cb1-95"></a><span class="in">  labs(x='Social Media Platform', y='Propotion of Use by Gender', title='Use of Social Media Platform by Gender', caption = 'Use of social media by useage of multiple apps')+</span></span>
+<span id="cb1-96"><a href="#cb1-96"></a><span class="in">  theme_minimal()+</span></span>
+<span id="cb1-97"><a href="#cb1-97"></a><span class="in">  scale_fill_manual(values = c("Female" = "#B0476E", "Male" = "#C9732A")) +</span></span>
+<span id="cb1-98"><a href="#cb1-98"></a><span class="in">  theme(text = element_text(hjust = 0.5, size=12, family='serif'), plot.title=element_text(hjust = 0.5))+</span></span>
+<span id="cb1-99"><a href="#cb1-99"></a><span class="in">  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())</span></span>
+<span id="cb1-100"><a href="#cb1-100"></a><span class="in">```</span></span>
+<span id="cb1-101"><a href="#cb1-101"></a></span>
+<span id="cb1-102"><a href="#cb1-102"></a></span>
+<span id="cb1-103"><a href="#cb1-103"></a><span class="fu">## Big Picture</span></span>
+<span id="cb1-104"><a href="#cb1-104"></a>Overall, these results indicated reason for further research on this demographic of relationship status given the trends indicating a diffrence in social media usage by relationship status.  For example, now that there is evidence of a relationship, it would be worthwhile revisiting the question we posed at the beginning of this analysis: might there be a decreased reliance on social media as a source of happiness for individuals who are married/in relationships?    Additionally, the results on gender-based differences by social media usage and platform also indicate areas for further research--albeit this is a demographic that has been more researched. There are some limitations in our data.  Namely, we only have 481 individuals who participated--thus our sample is likely not as representative as it could have been.  This was demonstrated, for example, in the fact that only 6 divorced individuals were accounted for.  Next, the source of data was "unverifiable", so it is unclear how reliable this dataset is.  Finally, we have a lot of helpful visualizations, but some people may prefer numerical visualizations (i.e. statistics) that would be helpful to include in future data analyses. </span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

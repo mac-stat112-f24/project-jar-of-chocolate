@@ -38,6 +38,7 @@ media%>%
   ggplot(aes(x=Time, y=n, fill=MStat))+
   geom_bar(stat = "identity", alpha=0.85, position='fill')+
   labs(x='Time Spent on Social Media', y='Propotion of Use by Marital Status', title='Fig. 1: Time on Social Media by Marital Status', MStat='Marital Status', caption = 'Plot created by Tanisha Dodla')+
+  labs(x='Time Spent on Social Media', y='Propotion of Use by Marital Status', MStat = 'Marital Status', title='Time on Social Media by Marital Status', caption = 'Plot created by Tanisha Dodla')+
   theme_minimal()+
   scale_fill_manual(values = c("Divorced" = "#B0476E", "Married" = "#C9732A", 'Single' = '#3C7D3F', 'In a relationship' = '#4679B3')) +
   theme(text = element_text(hjust = 0.5, size=12, family='serif'), plot.title=element_text(hjust = 0.5))+
@@ -91,6 +92,7 @@ media %>%
   ggplot(aes(x=Platform, fill=Gender, y=count))+
   geom_bar(stat = "identity", position='fill' , alpha=0.85)+
   labs(x='Social Media Platform', y='Propotion of Use by Gender', title='Fig. 3: Use of Social Media Platform by Gender', caption = 'Use of social media by useage of multiple apps. Plot created by Tanisha Dodla')+
+  labs(x='Social Media Platform', y='Propotion of Use by Gender', title='Use of Social Media Platform by Gender', caption = 'Use of social media by useage of multiple apps')+
   theme_minimal()+
   scale_fill_manual(values = c("Female" = "#B0476E", "Male" = "#C9732A")) +
   theme(text = element_text(hjust = 0.5, size=12, family='serif'), plot.title=element_text(hjust = 0.5))+
