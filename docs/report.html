@@ -197,7 +197,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+<<<<<<< HEAD
         
+=======
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#goals" id="toc-goals" class="nav-link active" data-scroll-target="#goals">Goals</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
+  <li><a href="#takeaways" id="toc-takeaways" class="nav-link" data-scroll-target="#takeaways">Takeaways</a></li>
+  <li><a href="#big-picture" id="toc-big-picture" class="nav-link" data-scroll-target="#big-picture">Big Picture</a></li>
+  </ul>
+</nav>
+>>>>>>> 3bdea00a04dae4cbdd804003bb1b74363fb1a011
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -221,16 +234,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<section id="goals" class="level2">
+<h2 class="anchored" data-anchor-id="goals">Goals</h2>
 <p>In this proposal, we are hoping to investigate how usage of various social media differs by relationship status in addition to several other questions. We will first determine what the most used social media app is and how long individuals spend on it. Then, we will investigate how that differs by gender and relationship status. Relationship status is a demographic that has rarely been explored as a variable in social media usage statistics. If relationship status is found to influence social media usage time, this could indicate an area for further research. Might, for example, the increased overall happiness of being in a relationship decrease average social media usage time? Or, might divorced (or single) status lead to a decrease in overall happiness–resulting in an increased dependency on (and thus usage of) social media apps?</p>
-<p>Data Data collection: What was collected, When was it collected, Why was it collected, How was it collected originally, Who collected it</p>
-<p>Our data was acquired from the data repository site “Kaggle”. This dataset consists of usage patterns collected across eight social media platforms–including: Facebook, Pinterest, Reddit, Youtube, Discord, Instagram, Twitter, Snapchat. There are 481 observations of 21 variables–including demographic questions.</p>
-<p>Data understanding: How much data do you have? What types of measurements? Anything you needed to clean before getting started? - For the sake of simplicity, we renamed many of the variables in the dataset (often shortening them). Data insights It’s your job to explicitly identify and discuss key insights. Don’t simply present the audience with some code and output and expect them to do that work. Specifically:</p>
-<p>What are the important takeaways from the data? What was interesting? Why do these takeaways matter? Was there anything surprising? Overall, what do you want the audience to walk away with? What do you want them to understand about your data and research questions?!?</p>
-<p>Conclusions / Big Picture How do the insights connect to answer your research question? What improvements might someone make to your analysis? Are there any limitations or weaknesses of your data / analysis?</p>
+</section>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<p>Our data was acquired from the data repository site “Kaggle”. This dataset consists of usage patterns collected across eight social media platforms–including: Facebook, Pinterest, Reddit, Youtube, Discord, Instagram, Twitter, Snapchat. There are 481 observations of 21 variables–including demographic questions. For the sake of simplicity, we renamed many of the variables in the dataset (often shortening them).</p>
+</section>
+<section id="takeaways" class="level2">
+<h2 class="anchored" data-anchor-id="takeaways">Takeaways</h2>
+<p>Of the people surveyed, single individuals spent the most time using social media. Married and divorced individuals spent the least amount of time on social media sites, while individuals in a relationship had usage levels on par with single individuals. It is important to note, however, that there were very few divorced individuals who were surveyed (only six), so results concerning that demographic likely aren’t as generalizable as for individuals who are single, married, or in a relationship. This might be because married individuals have more responsibilities (household chores, children to take care of, etc.) meaning that they have the least amount of free time to spend on social media platforms. Single individuals and those in relationships likely have fewer responsibilities and thus more time to spend on social media platforms.</p>
+<p>When considering gender-based splits in usage, we see that men use Discord, Reddit, and Twitter more, while Facebook, Instagram, Snapchat, TikTok, and Pinterest are used more by women. Additionally, women spent overall more time on social media platforms than men. The differences in usage by platform likely demonstrate a gender-based preference for different platforms and also might indicate something about gender relations on different platforms–i.e.&nbsp;whether there is any sort of sexist culture on a given platform. The fact that women use social media platforms far more than men is fairly suprising and indicates an area for future research–to further investigate additional contributing factors.</p>
+</section>
+<section id="big-picture" class="level2">
+<h2 class="anchored" data-anchor-id="big-picture">Big Picture</h2>
+<p>Overall, these results indicated reason for further research on this demographic of relationship status given the trends indicating a diffrence in social media usage by relationship status. For example, now that there is evidence of a relationship, it would be worthwhile revisiting the question we posed at the beginning of this analysis: might there be a decreased reliance on social media as a source of happiness for individuals who are married/in relationships? Additionally, the results on gender-based differences by social media usage and platform also indicate areas for further research–albeit this is a demographic that has been more researched. There are some limitations in our data. Namely, we only have 481 individuals who participated–thus our sample is likely not as representative as it could have been. This was demonstrated, for example, in the fact that only 6 divorced individuals were accounted for. Next, the source of data was “unverifiable”, so it is unclear how reliable this dataset is. Finally, we have a lot of helpful visualizations, but some people may prefer numerical visualizations (i.e.&nbsp;statistics) that would be helpful to include in future data analyses.</p>
 
 
 <!-- -->
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -851,18 +875,19 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu"># Report {.unnumbered}</span></span>
 <span id="cb1-2"><a href="#cb1-2"></a></span>
-<span id="cb1-3"><a href="#cb1-3"></a>  In this proposal, we are hoping to investigate how usage of various social media differs by relationship status in addition to  several other questions. We will first determine what the most used social media app is and how long individuals spend on it. Then, we will investigate how that differs by gender and relationship status. Relationship status is a demographic that has rarely been explored as a variable in social media usage statistics. If relationship status is found to influence social media usage time, this could indicate an area for further research. Might, for example, the increased overall happiness of being in a relationship decrease average social media usage time?  Or, might divorced (or single) status lead to a decrease in overall happiness--resulting in an increased dependency on (and thus usage of) social media apps?  </span>
-<span id="cb1-4"><a href="#cb1-4"></a></span>
-<span id="cb1-5"><a href="#cb1-5"></a>Data</span>
-<span id="cb1-6"><a href="#cb1-6"></a>Data collection: What was collected, When was it collected, Why was it collected, How was it collected originally, Who collected it</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">## Goals</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a>  In this proposal, we are hoping to investigate how usage of various social media differs by relationship status in addition to  several other questions. We will first determine what the most used social media app is and how long individuals spend on it. Then, we will investigate how that differs by gender and relationship status. Relationship status is a demographic that has rarely been explored as a variable in social media usage statistics. If relationship status is found to influence social media usage time, this could indicate an area for further research. Might, for example, the increased overall happiness of being in a relationship decrease average social media usage time?  Or, might divorced (or single) status lead to a decrease in overall happiness--resulting in an increased dependency on (and thus usage of) social media apps?  </span>
+<span id="cb1-5"><a href="#cb1-5"></a></span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="fu">## Data</span></span>
 <span id="cb1-7"><a href="#cb1-7"></a></span>
-<span id="cb1-8"><a href="#cb1-8"></a>Our data was acquired from the data repository site "Kaggle".  This dataset consists of usage patterns collected across eight social media platforms--including: Facebook, Pinterest, Reddit, Youtube, Discord, Instagram, Twitter, Snapchat.  There are 481 observations of 21 variables--including demographic questions.       </span>
+<span id="cb1-8"><a href="#cb1-8"></a>Our data was acquired from the data repository site "Kaggle".  This dataset consists of usage patterns collected across eight social media platforms--including: Facebook, Pinterest, Reddit, Youtube, Discord, Instagram, Twitter, Snapchat.  There are 481 observations of 21 variables--including demographic questions. For the sake of simplicity, we renamed many of the variables in the dataset (often shortening them).</span>
 <span id="cb1-9"><a href="#cb1-9"></a></span>
-<span id="cb1-10"><a href="#cb1-10"></a>Data understanding: How much data do you have? What types of measurements? Anything you needed to clean before getting started?</span>
-<span id="cb1-11"><a href="#cb1-11"></a><span class="ss">- </span>For the sake of simplicity, we renamed many of the variables in the dataset (often shortening them).</span>
-<span id="cb1-12"><a href="#cb1-12"></a>Data insights</span>
-<span id="cb1-13"><a href="#cb1-13"></a>It’s your job to explicitly identify and discuss key insights. Don’t simply present the audience with some code and output and expect them to do that work. Specifically:</span>
+<span id="cb1-10"><a href="#cb1-10"></a></span>
+<span id="cb1-11"><a href="#cb1-11"></a><span class="fu">## Takeaways</span></span>
+<span id="cb1-12"><a href="#cb1-12"></a></span>
+<span id="cb1-13"><a href="#cb1-13"></a>Of the people surveyed, single individuals spent the most time using social media. Married and divorced individuals spent the least amount of time on social media sites, while individuals in a relationship had usage levels on par with single individuals. It is important to note, however, that there were very few divorced individuals who were surveyed (only six), so results concerning that demographic likely aren't as generalizable as for individuals who are single, married, or in a relationship.  This might be because married individuals have more responsibilities (household chores, children to take care of, etc.) meaning that they have the least amount of free time to spend on social media platforms.  Single individuals and those in relationships likely have fewer responsibilities and thus more time to spend on social media platforms.  </span>
 <span id="cb1-14"><a href="#cb1-14"></a></span>
+<<<<<<< HEAD
 <span id="cb1-15"><a href="#cb1-15"></a>What are the important takeaways from the data? What was interesting?</span>
 <span id="cb1-16"><a href="#cb1-16"></a>Why do these takeaways matter?</span>
 <span id="cb1-17"><a href="#cb1-17"></a>Was there anything surprising?</span>
@@ -872,6 +897,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-21"><a href="#cb1-21"></a>How do the insights connect to answer your research question?</span>
 <span id="cb1-22"><a href="#cb1-22"></a>What improvements might someone make to your analysis?</span>
 <span id="cb1-23"><a href="#cb1-23"></a>Are there any limitations or weaknesses of your data / analysis?</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+=======
+<span id="cb1-15"><a href="#cb1-15"></a>When considering gender-based splits in usage, we see that men use Discord, Reddit, and Twitter more, while Facebook, Instagram, Snapchat, TikTok, and Pinterest are used more by women.  Additionally, women spent overall more time on social media platforms than men.  The differences in usage by platform likely demonstrate a gender-based preference for different platforms and also might indicate something about gender relations on different platforms--i.e. whether there is any sort of sexist culture on a given platform.  The fact that women use social media platforms far more than men is fairly suprising and indicates an area for future research--to further investigate additional contributing factors. </span>
+<span id="cb1-16"><a href="#cb1-16"></a></span>
+<span id="cb1-17"><a href="#cb1-17"></a></span>
+<span id="cb1-18"><a href="#cb1-18"></a></span>
+<span id="cb1-19"><a href="#cb1-19"></a><span class="fu">## Big Picture</span></span>
+<span id="cb1-20"><a href="#cb1-20"></a>Overall, these results indicated reason for further research on this demographic of relationship status given the trends indicating a diffrence in social media usage by relationship status.  For example, now that there is evidence of a relationship, it would be worthwhile revisiting the question we posed at the beginning of this analysis: might there be a decreased reliance on social media as a source of happiness for individuals who are married/in relationships?    Additionally, the results on gender-based differences by social media usage and platform also indicate areas for further research--albeit this is a demographic that has been more researched. There are some limitations in our data.  Namely, we only have 481 individuals who participated--thus our sample is likely not as representative as it could have been.  This was demonstrated, for example, in the fact that only 6 divorced individuals were accounted for.  Next, the source of data was "unverifiable", so it is unclear how reliable this dataset is.  Finally, we have a lot of helpful visualizations, but some people may prefer numerical visualizations (i.e. statistics) that would be helpful to include in future data analyses. </span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+>>>>>>> 3bdea00a04dae4cbdd804003bb1b74363fb1a011
 </div></div></div></div></div>
 </div> <!-- /content -->
 
