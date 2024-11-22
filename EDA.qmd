@@ -2,8 +2,9 @@
 title: 'EDA' 
 ---
 
-```{r}
+```{r, include=FALSE}
 library(tidyverse)
+library(plotly)
 media <- read_csv('../project-jar-of-chocolate/data.csv')
 media <- media%>%
   rename(App = as.factor('7. What social media platforms do you commonly use?'))%>%
@@ -36,7 +37,7 @@ media%>%
 
 
 #Total 
-media %>% 
+fig1 <- media %>% 
   mutate(ig = str_detect(App, 'Instagram')) %>% 
   mutate(fb=str_detect(App, 'Facebook'))%>%
   mutate(tw =str_detect(App, 'Twitter'))%>%
@@ -58,14 +59,16 @@ media %>%
   scale_fill_manual(values = c("Female" = "#B0476E", "Male" = "#C9732A")) +
   theme(text = element_text(hjust = 0.5, size=12, family='serif'), plot.title=element_text(hjust = 0.5))+
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
+
+ggplotly(fig1)
 ```
 
-```{r, fig.width=10}
+```{r, fig.width=14, fig.height=8}
 
 #| fig-alt: 'This is a series of side by side bar plots with time spent on social media during the day on the X-axis and proportion of use by gender on the Y-axis. The time ranges between zero and five plus hours on social media. It appears that overall there is a slightly higher proportion of females on social media with 5 + hours being roughly 65% female usage, and less than an hour being 80% male usage.'
 
 #Time used by gender 
-media%>%
+fig2 <- media%>%
   filter(Gender %in% c('Female', 'Male'))%>%
     mutate(Time=factor(Time))%>%
   mutate(Time=fct_relevel(Time, c('Less than an Hour', 'Between 1 and 2 hours', 'Between 2 and 3 hours', 'Between 3 and 4 hours', 'Between 4 and 5 hours', 'More than 5 hours')))%>%
@@ -78,15 +81,17 @@ media%>%
   scale_fill_manual(values = c("Female" = "#B0476E", "Male" = "#C9732A")) +
   theme(text = element_text(hjust = 0.5, size=12, family='serif'), plot.title=element_text(hjust = 0.5))+
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
+
+ggplotly(fig2)
 ```
 
-```{r, fig.width=10}
+```{r, fig.width=14, fig.height=8}
 
 #| fig-alt: 'This is a series of side by side bar plots with time spent on social media during the day on the X-axis and proportion of use by marital status on the Y-axis. The time ranges between zero and five plus hours on social media. The marriage status categories are single, married, divorced, or in a relationship. Overall, it appears that those who identify as single have the greatest time spent on social media, with divorced people having the least hours spent, and those in a relationship not far behind, according to this vizualization. It is also important to note that there is only 6 divorced people in this dataset so their social media usage is probably not representative.'
 
 
 #Time used by marital status 
-media%>%
+fig3 <- media%>%
   filter(Gender %in% c('Female', 'Male'))%>%
   mutate(Time=factor(Time))%>%
   mutate(Time=fct_relevel(Time, c('Less than an Hour', 'Between 1 and 2 hours', 'Between 2 and 3 hours', 'Between 3 and 4 hours', 'Between 4 and 5 hours', 'More than 5 hours')))%>%
@@ -99,6 +104,8 @@ media%>%
   scale_fill_manual(values = c("Divorced" = "#B0476E", "Married" = "#C9732A", 'Single' = '#3C7D3F', 'In a relationship' = '#4679B3')) +
   theme(text = element_text(hjust = 0.5, size=12, family='serif'), plot.title=element_text(hjust = 0.5))+
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
+
+ggplotly(fig3)
 ```
 
 

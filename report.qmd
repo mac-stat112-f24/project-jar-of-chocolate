@@ -2,6 +2,7 @@
 
 ```{r, echo=FALSE, include=FALSE}
 library(tidyverse)
+library(plotly)
 media <- read_csv('../project-jar-of-chocolate/data.csv')
 media <- media%>%
   rename(App = as.factor('7. What social media platforms do you commonly use?'))%>%
@@ -29,20 +30,23 @@ Of the people surveyed, single individuals spent the most time using social medi
 
 
 #Time used by marital status 
-media%>%
+fig1 <- media%>%
   filter(Gender %in% c('Female', 'Male'))%>%
   mutate(Time=factor(Time))%>%
   mutate(Time=fct_relevel(Time, c('Less than an Hour', 'Between 1 and 2 hours', 'Between 2 and 3 hours', 'Between 3 and 4 hours', 'Between 4 and 5 hours', 'More than 5 hours')))%>%
-  group_by(Time)%>%
-  count(MStat)%>%
-  ggplot(aes(x=Time, y=n, fill=MStat))+
+  group_by(Time) %>%
+  count(MStat) %>%
+  mutate(Percentage = n / sum(n) * 100) %>%
+  ggplot(aes(x = Time, y = n,fill = MStat, text = paste0("Time: ", Time, "<br>Marital Status: ", MStat, "<br>Percentage: ", round(Percentage, 1), "%"))) +
   geom_bar(stat = "identity", alpha=0.85, position='fill')+
-  labs(x='Time Spent on Social Media', y='Propotion of Use by Marital Status', title='Fig. 1: Time on Social Media by Marital Status', MStat='Marital Status', caption = 'Plot created by Tanisha Dodla')+
+  labs(x='Time Spent on Social Media', y='Propotion of Use by Marital Status', title='Fig. 1: Time on Social Media by Marital Status', fill = 'Marital Status', caption = 'Plot created by Tanisha Dodla')+
   labs(x='Time Spent on Social Media', y='Propotion of Use by Marital Status', MStat = 'Marital Status', title='Time on Social Media by Marital Status', caption = 'Plot created by Tanisha Dodla')+
   theme_minimal()+
   scale_fill_manual(values = c("Divorced" = "#B0476E", "Married" = "#C9732A", 'Single' = '#3C7D3F', 'In a relationship' = '#4679B3')) +
   theme(text = element_text(hjust = 0.5, size=12, family='serif'), plot.title=element_text(hjust = 0.5))+
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
+
+ggplotly(fig1,tooltip = "text")  %>% config(displayModeBar = FALSE)
 ```
 
 
@@ -53,19 +57,22 @@ When considering gender-based splits in usage, we see that men use Discord, Redd
 #| fig-alt: 'This is a series of side by side bar plots with time spent on social media during the day on the X-axis and proportion of use by gender on the Y-axis. The time ranges between zero and five plus hours on social media. It appears that overall there is a slightly higher proportion of females on social media with 5 + hours being roughly 65% female usage, and less than an hour being 80% male usage.'
 
 #Time used by gender 
-media%>%
+fig2 <- media%>%
   filter(Gender %in% c('Female', 'Male'))%>%
     mutate(Time=factor(Time))%>%
   mutate(Time=fct_relevel(Time, c('Less than an Hour', 'Between 1 and 2 hours', 'Between 2 and 3 hours', 'Between 3 and 4 hours', 'Between 4 and 5 hours', 'More than 5 hours')))%>%
-  group_by(Gender)%>%
-  count(Time)%>%
-  ggplot(aes(x=Time, y=n, fill=Gender))+
+  group_by(Time) %>%
+  count(Gender) %>%
+  mutate(Percentage = n / sum(n) * 100) %>%
+  ggplot(aes(x = Time,y = n, fill = Gender, text = paste0("Time Spent: ", Time,"<br>Gender: ", Gender,"<br>Percentage: ", round(Percentage, 1), "%"))) +
   geom_bar(stat = "identity", position='fill' , alpha=0.85)+
   labs(x='Time spent during the day on Social Media', y='Propotion of Use by Gender', title='Fig. 2: Time on Social Media by Gender', caption = 'Plot created by Tanisha Dodla')+
   theme_minimal()+
   scale_fill_manual(values = c("Female" = "#B0476E", "Male" = "#C9732A")) +
   theme(text = element_text(hjust = 0.5, size=12, family='serif'), plot.title=element_text(hjust = 0.5))+
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
+
+ggplotly(fig2 , tooltip = "text") %>% config(displayModeBar = FALSE)
 ```
 
 ```{r, echo=FALSE}
@@ -74,7 +81,7 @@ media%>%
 
 
 #Total 
-media %>% 
+fig3 <- media %>% 
   mutate(ig = str_detect(App, 'Instagram')) %>% 
   mutate(fb=str_detect(App, 'Facebook'))%>%
   mutate(tw =str_detect(App, 'Twitter'))%>%
@@ -89,7 +96,9 @@ media %>%
   filter(Gender %in% c('Female', 'Male'))%>%
   pivot_longer(cols = -Gender, names_to = "Platform", values_to = "count")%>%
   mutate(Platform = fct_relevel(Platform, c( 'Reddit', 'Discord', 'Twitter',  'Facebook', 'Instagram', 'Snapchat', 'TikTok','Pinterest')))%>%
-  ggplot(aes(x=Platform, fill=Gender, y=count))+
+  group_by(Platform) %>%
+  mutate(Percentage = count / sum(count) * 100) %>%
+  ggplot(aes( x = Platform, fill = Gender, y = count,text = paste0("Platform: ", Platform,"<br>Gender: ", Gender,"<br>Percentage: ", round(Percentage, 1), "%") )) +
   geom_bar(stat = "identity", position='fill' , alpha=0.85)+
   labs(x='Social Media Platform', y='Propotion of Use by Gender', title='Fig. 3: Use of Social Media Platform by Gender', caption = 'Use of social media by useage of multiple apps. Plot created by Tanisha Dodla')+
   labs(x='Social Media Platform', y='Propotion of Use by Gender', title='Use of Social Media Platform by Gender', caption = 'Use of social media by useage of multiple apps')+
@@ -97,6 +106,8 @@ media %>%
   scale_fill_manual(values = c("Female" = "#B0476E", "Male" = "#C9732A")) +
   theme(text = element_text(hjust = 0.5, size=12, family='serif'), plot.title=element_text(hjust = 0.5))+
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
+
+ggplotly(fig3, tooltip = "text") %>% config(displayModeBar = FALSE)
 ```
 
 
