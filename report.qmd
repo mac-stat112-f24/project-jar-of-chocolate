@@ -24,7 +24,7 @@ Our data was acquired from the data repository site "Kaggle".  This dataset cons
 Of the people surveyed, single individuals spent the most time using social media (see Fig.1). Married and divorced individuals spent the least amount of time on social media sites, while individuals in a relationship had usage levels on par with single individuals (see Fig.1). It is important to note, however, that there were very few divorced individuals who were surveyed (only six), so results concerning that demographic likely aren't as generalizable as for individuals who are single, married, or in a relationship.  This might be because married individuals have more responsibilities (household chores, children to take care of, etc.) meaning that they have the least amount of free time to spend on social media platforms.  Single individuals and those in relationships likely have fewer responsibilities and thus more time to spend on social media platforms.  
 
 
-```{r, echo=FALSE}
+```{r, fig.width = 12, fig.height = 6, echo=FALSE}
 
 #| fig-alt: 'This is a series of side by side bar plots with time spent on social media during the day on the X-axis and proportion of use by marital status on the Y-axis. The time ranges between zero and five plus hours on social media. The marriage status categories are single, married, divorced, or in a relationship. Overall, it appears that those who identify as single have the greatest time spent on social media, with divorced people having the least hours spent, and those in a relationship not far behind, according to this vizualization. It is also important to note that there is only 6 divorced people in this dataset so their social media usage is probably not representative.'
 
@@ -40,19 +40,18 @@ fig1 <- media%>%
   ggplot(aes(x = Time, y = n,fill = MStat, text = paste0("Time: ", Time, "<br>Marital Status: ", MStat, "<br>Percentage: ", round(Percentage, 1), "%"))) +
   geom_bar(stat = "identity", alpha=0.85, position='fill')+
   labs(x='Time Spent on Social Media', y='Propotion of Use by Marital Status', title='Fig. 1: Time on Social Media by Marital Status', fill = 'Marital Status', caption = 'Plot created by Tanisha Dodla')+
-  labs(x='Time Spent on Social Media', y='Propotion of Use by Marital Status', MStat = 'Marital Status', title='Time on Social Media by Marital Status', caption = 'Plot created by Tanisha Dodla')+
+  labs(x='Time Spent on Social Media', y='Propotion of Use by Marital Status', MStat = 'Marital Status', title='Fig 1: Time on Social Media by Marital Status')+
   theme_minimal()+
   scale_fill_manual(values = c("Divorced" = "#B0476E", "Married" = "#C9732A", 'Single' = '#3C7D3F', 'In a relationship' = '#4679B3')) +
-  theme(text = element_text(hjust = 0.5, size=12, family='serif'), plot.title=element_text(hjust = 0.5))+
-  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
+  theme(text = element_text(hjust = 0.5, size=12, family='serif'), plot.title=element_text(hjust = 0.5), axis.text.x = element_text(angle = 30, hjust = 0.5, vjust = 0.5))
 
-ggplotly(fig1,tooltip = "text") 
+ggplotly(fig1,tooltip = "text")  %>% config(displayModeBar = FALSE)
 ```
 
 
 When considering gender-based splits in usage, we see that men use Discord, Reddit, and Twitter more, while Facebook, Instagram, Snapchat, TikTok, and Pinterest are used more by women (see Fig.3).  Additionally, women spent overall more time on social media platforms than men (see Fig.2).  The differences in usage by platform likely demonstrate a gender-based preference for different platforms and also might indicate something about gender relations on different platforms--i.e. whether there is any sort of sexist culture on a given platform.  The fact that women use social media platforms far more than men is fairly suprising and indicates an area for future research--to further investigate additional contributing factors. 
 
-```{r, echo=FALSE}
+```{r, fig.width= 10, echo=FALSE}
 
 #| fig-alt: 'This is a series of side by side bar plots with time spent on social media during the day on the X-axis and proportion of use by gender on the Y-axis. The time ranges between zero and five plus hours on social media. It appears that overall there is a slightly higher proportion of females on social media with 5 + hours being roughly 65% female usage, and less than an hour being 80% male usage.'
 
@@ -66,16 +65,16 @@ fig2 <- media%>%
   mutate(Percentage = n / sum(n) * 100) %>%
   ggplot(aes(x = Time,y = n, fill = Gender, text = paste0("Time Spent: ", Time,"<br>Gender: ", Gender,"<br>Percentage: ", round(Percentage, 1), "%"))) +
   geom_bar(stat = "identity", position='fill' , alpha=0.85)+
-  labs(x='Time spent during the day on Social Media', y='Propotion of Use by Gender', title='Fig. 2: Time on Social Media by Gender', caption = 'Plot created by Tanisha Dodla')+
+  labs(x='Time spent during the day on Social Media', y='Propotion of Use by Gender', title='Fig. 2: Time on Social Media by Gender')+
   theme_minimal()+
   scale_fill_manual(values = c("Female" = "#B0476E", "Male" = "#C9732A")) +
-  theme(text = element_text(hjust = 0.5, size=12, family='serif'), plot.title=element_text(hjust = 0.5))+
-  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
+  theme(text = element_text(hjust = 0.5, size=12, family='serif'), plot.title=element_text(hjust = 0.5), axis.text.x = element_text(angle = 30, hjust = 0.5, vjust = 0.5))
 
-ggplotly(fig2 , tooltip = "text") 
+ggplotly(fig2 , tooltip = "text")  %>% config(displayModeBar = FALSE)
 ```
-
-```{r, echo=FALSE}
+\
+\
+```{r, fig.width= 10, echo=FALSE}
 
 #| fig-alt: 'This is a series of side by side bar plots with social media platforms on the X-axis and proportion of use by gender on the Y-axis. This vizualization was created by using data from people who recorded multiple app usage, instead of just one platform. It appears that overall there is a slightly higher proportion of females that use social media than males across all platforms. The most popular platform used by females is Pinterest, and the most popular platform by men is Discord, according to this vizualization.' 
 
@@ -100,14 +99,12 @@ fig3 <- media %>%
   mutate(Percentage = count / sum(count) * 100) %>%
   ggplot(aes( x = Platform, fill = Gender, y = count,text = paste0("Platform: ", Platform,"<br>Gender: ", Gender,"<br>Percentage: ", round(Percentage, 1), "%") )) +
   geom_bar(stat = "identity", position='fill' , alpha=0.85)+
-  labs(x='Social Media Platform', y='Propotion of Use by Gender', title='Fig. 3: Use of Social Media Platform by Gender', caption = 'Use of social media by useage of multiple apps. Plot created by Tanisha Dodla')+
-  labs(x='Social Media Platform', y='Propotion of Use by Gender', title='Use of Social Media Platform by Gender', caption = 'Use of social media by useage of multiple apps')+
+  labs(x='Social Media Platform', y='Propotion of Use by Gender', title='Fig. 3: Use of Social Media Platform by Gender')+
   theme_minimal()+
   scale_fill_manual(values = c("Female" = "#B0476E", "Male" = "#C9732A")) +
-  theme(text = element_text(hjust = 0.5, size=12, family='serif'), plot.title=element_text(hjust = 0.5))+
-  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
+  theme(text = element_text(hjust = 0.5, size=12, family='serif'), plot.title=element_text(hjust = 0.5), axis.text.x = element_text(angle = 30, hjust = 0.5, vjust = 0.5))
 
-ggplotly(fig3, tooltip = "text") 
+ggplotly(fig3, tooltip = "text")  %>% config(displayModeBar = FALSE)
 ```
 
 
