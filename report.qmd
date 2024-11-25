@@ -24,7 +24,7 @@ Our data was acquired from the data repository site "Kaggle".  This dataset cons
 Of the people surveyed, single individuals spent the most time using social media (see Fig.1). Married and divorced individuals spent the least amount of time on social media sites, while individuals in a relationship had usage levels on par with single individuals (see Fig.1). It is important to note, however, that there were very few divorced individuals who were surveyed (only six), so results concerning that demographic likely aren't as generalizable as for individuals who are single, married, or in a relationship.  This might be because married individuals have more responsibilities (household chores, children to take care of, etc.) meaning that they have the least amount of free time to spend on social media platforms.  Single individuals and those in relationships likely have fewer responsibilities and thus more time to spend on social media platforms.  
 
 
-```{r, fig.width=10, echo=FALSE}
+```{r, echo=FALSE}
 
 #| fig-alt: 'This is a series of side by side bar plots with time spent on social media during the day on the X-axis and proportion of use by marital status on the Y-axis. The time ranges between zero and five plus hours on social media. The marriage status categories are single, married, divorced, or in a relationship. Overall, it appears that those who identify as single have the greatest time spent on social media, with divorced people having the least hours spent, and those in a relationship not far behind, according to this vizualization. It is also important to note that there is only 6 divorced people in this dataset so their social media usage is probably not representative.'
 
@@ -46,13 +46,13 @@ fig1 <- media%>%
   theme(text = element_text(hjust = 0.5, size=12, family='serif'), plot.title=element_text(hjust = 0.5))+
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
 
-ggplotly(fig1,tooltip = "text")  %>% config(displayModeBar = FALSE)
+ggplotly(fig1,tooltip = "text") 
 ```
 
 
 When considering gender-based splits in usage, we see that men use Discord, Reddit, and Twitter more, while Facebook, Instagram, Snapchat, TikTok, and Pinterest are used more by women (see Fig.3).  Additionally, women spent overall more time on social media platforms than men (see Fig.2).  The differences in usage by platform likely demonstrate a gender-based preference for different platforms and also might indicate something about gender relations on different platforms--i.e. whether there is any sort of sexist culture on a given platform.  The fact that women use social media platforms far more than men is fairly suprising and indicates an area for future research--to further investigate additional contributing factors. 
 
-```{r, fig.width=10, echo=FALSE}
+```{r, echo=FALSE}
 
 #| fig-alt: 'This is a series of side by side bar plots with time spent on social media during the day on the X-axis and proportion of use by gender on the Y-axis. The time ranges between zero and five plus hours on social media. It appears that overall there is a slightly higher proportion of females on social media with 5 + hours being roughly 65% female usage, and less than an hour being 80% male usage.'
 
@@ -72,7 +72,7 @@ fig2 <- media%>%
   theme(text = element_text(hjust = 0.5, size=12, family='serif'), plot.title=element_text(hjust = 0.5))+
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
 
-ggplotly(fig2 , tooltip = "text") %>% config(displayModeBar = FALSE)
+ggplotly(fig2 , tooltip = "text") 
 ```
 
 ```{r, echo=FALSE}
@@ -107,7 +107,7 @@ fig3 <- media %>%
   theme(text = element_text(hjust = 0.5, size=12, family='serif'), plot.title=element_text(hjust = 0.5))+
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
 
-ggplotly(fig3, tooltip = "text") %>% config(displayModeBar = FALSE)
+ggplotly(fig3, tooltip = "text") 
 ```
 
 
