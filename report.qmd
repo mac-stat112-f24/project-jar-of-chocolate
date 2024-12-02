@@ -37,13 +37,13 @@ fig1 <- media%>%
   group_by(Time) %>%
   count(MStat) %>%
   mutate(Percentage = n / sum(n) * 100) %>%
-  ggplot(aes(x = Time, y = n,fill = MStat, text = paste0("Time: ", Time, "<br>Marital Status: ", MStat, "<br>Percentage: ", round(Percentage, 1), "%"))) +
+  ggplot(aes(y = Time, x = n,fill = MStat, text = paste0("Time: ", Time, "<br>Marital Status: ", MStat, "<br>Percentage: ", round(Percentage, 1), "%"))) +
   geom_bar(stat = "identity", alpha=0.85, position='fill')+
   labs(x='Time Spent on Social Media', y='Propotion of Use by Marital Status', title='Fig. 1: Time on Social Media by Marital Status', fill = 'Marital Status', caption = 'Plot created by Tanisha Dodla')+
-  labs(x='Time Spent on Social Media', y='Propotion of Use by Marital Status', MStat = 'Marital Status', title='Fig 1: Time on Social Media by Marital Status')+
+  labs(y='Time Spent on Social Media', x='Propotion of Use by Marital Status', MStat = 'Marital Status', title='Fig 1: Time on Social Media by Marital Status')+
   theme_minimal()+
   scale_fill_manual(values = c("Divorced" = "#B0476E", "Married" = "#C9732A", 'Single' = '#3C7D3F', 'In a relationship' = '#4679B3')) +
-  theme(text = element_text(hjust = 0.5, size=12, family='serif'), plot.title=element_text(hjust = 0.5), axis.text.x = element_text(angle = 30, hjust = 0.5, vjust = 0.5), panel.grid.major = element_blank())
+  theme(text = element_text(hjust = 0.5, size=12, family='serif'), plot.title=element_text(hjust = 0.5), panel.grid.major = element_blank())
 
 ggplotly(fig1,tooltip = "text")  %>% config(displayModeBar = FALSE)
 ```
@@ -63,12 +63,12 @@ fig2 <- media%>%
   group_by(Time) %>%
   count(Gender) %>%
   mutate(Percentage = n / sum(n) * 100) %>%
-  ggplot(aes(x = Time,y = n, fill = Gender, text = paste0("Time Spent: ", Time,"<br>Gender: ", Gender,"<br>Percentage: ", round(Percentage, 1), "%"))) +
+  ggplot(aes(y = Time,x = n, fill = Gender, text = paste0("Time Spent: ", Time,"<br>Gender: ", Gender,"<br>Percentage: ", round(Percentage, 1), "%"))) +
   geom_bar(stat = "identity", position='fill' , alpha=0.85)+
-  labs(x='Time spent during the day on Social Media', y='Propotion of Use by Gender', title='Fig. 2: Time on Social Media by Gender')+
+  labs(y='Time spent during the day on Social Media', x='Propotion of Use by Gender', title='Fig. 2: Time on Social Media by Gender')+
   theme_minimal()+
   scale_fill_manual(values = c("Female" = "#B0476E", "Male" = "#C9732A")) +
-  theme(text = element_text(hjust = 0.5, size=12, family='serif'), plot.title=element_text(hjust = 0.5), axis.text.x = element_text(angle = 30, hjust = 0.5, vjust = 0.5), panel.grid.major = element_blank())
+  theme(text = element_text(hjust = 0.5, size=12, family='serif'), plot.title=element_text(hjust = 0.5), panel.grid.major = element_blank())
 
 ggplotly(fig2 , tooltip = "text")  %>% config(displayModeBar = FALSE)
 ```
@@ -97,12 +97,12 @@ fig3 <- media %>%
   mutate(Platform = fct_relevel(Platform, c( 'Reddit', 'Discord', 'Twitter',  'Facebook', 'Instagram', 'Snapchat', 'TikTok','Pinterest')))%>%
   group_by(Platform) %>%
   mutate(Percentage = count / sum(count) * 100) %>%
-  ggplot(aes( x = Platform, fill = Gender, y = count,text = paste0("Platform: ", Platform,"<br>Gender: ", Gender,"<br>Percentage: ", round(Percentage, 1), "%") )) +
+  ggplot(aes( y = Platform, fill = Gender, x = count,text = paste0("Platform: ", Platform,"<br>Gender: ", Gender,"<br>Percentage: ", round(Percentage, 1), "%") )) +
   geom_bar(stat = "identity", position='fill' , alpha=0.85)+
-  labs(x='Social Media Platform', y='Propotion of Use by Gender', title='Fig. 3: Use of Social Media Platform by Gender')+
+  labs(y='Social Media Platform', x='Propotion of Use by Gender', title='Fig. 3: Use of Social Media Platform by Gender')+
   theme_minimal()+
   scale_fill_manual(values = c("Female" = "#B0476E", "Male" = "#C9732A")) +
-  theme(text = element_text(hjust = 0.5, size=12, family='serif'), plot.title=element_text(hjust = 0.5), axis.text.x = element_text(angle = 30, hjust = 0.5, vjust = 0.5), panel.grid.major = element_blank())
+  theme(text = element_text(hjust = 0.5, size=12, family='serif'), plot.title=element_text(hjust = 0.5), panel.grid.major = element_blank())
 
 ggplotly(fig3, tooltip = "text")  %>% config(displayModeBar = FALSE)
 ```
