@@ -1,6 +1,6 @@
-# Relationships in the online era {.unnumbered}
+# Findings {.unnumbered}
 
-## An investigation of social media usage patterns by relationship status
+### Relationships in the online era: An investigation of social media usage patterns by relationship status
 
 ```{r, echo=FALSE, include=FALSE}
 library(tidyverse)
