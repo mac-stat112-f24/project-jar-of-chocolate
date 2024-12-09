@@ -1,4 +1,6 @@
-# Relationships in the online era: An investigation of social media usage patterns by relationship status {.unnumbered}
+# Relationships in the online era {.unnumbered}
+
+## An investigation of social media usage patterns by relationship status
 
 ```{r, echo=FALSE, include=FALSE}
 library(tidyverse)
@@ -34,13 +36,13 @@ fig1 <- media%>%
   filter(Gender %in% c('Female', 'Male'))%>%
   mutate(Time=factor(Time))%>%
   mutate(Time=fct_relevel(Time, c('Less than an Hour', 'Between 1 and 2 hours', 'Between 2 and 3 hours', 'Between 3 and 4 hours', 'Between 4 and 5 hours', 'More than 5 hours')))%>%
+   mutate(Time=fct_recode(Time, '<1' = 'Less than an Hour', '1-2'='Between 1 and 2 hours', '2-3'='Between 2 and 3 hours', '3-4'='Between 3 and 4 hours', '4-5'='Between 4 and 5 hours', '>5' = 'More than 5 hours'))%>%
   group_by(Time) %>%
   count(MStat) %>%
   mutate(Percentage = n / sum(n) * 100) %>%
-  ggplot(aes(y = Time, x = n,fill = MStat, text = paste0("Time: ", Time, "<br>Marital Status: ", MStat, "<br>Percentage: ", round(Percentage, 1), "%"))) +
+  ggplot(aes(y = Time, x = n,fill = MStat, text = paste0("Time (hours): ", Time, "<br>Marital Status: ", MStat, "<br>Percentage: ", round(Percentage, 1), "%"))) +
   geom_bar(stat = "identity", alpha=0.85, position='fill')+
-  labs(x='Time Spent on Social Media', y='Propotion of Use by Marital Status', title='Fig. 1: Time on Social Media by Marital Status', fill = 'Marital Status', caption = 'Plot created by Tanisha Dodla')+
-  labs(y='Time Spent on Social Media', x='Propotion of Use by Marital Status', MStat = 'Marital Status', title='Fig 1: Time on Social Media by Marital Status')+
+  labs(y='Time Spent on Social Media in hours', x='Propotion of Use by Marital Status', title='Fig. 1: Time on Social Media by Marital Status', fill = 'Marital Status')+
   theme_minimal()+
   scale_fill_manual(values = c("Divorced" = "#B0476E", "Married" = "#C9732A", 'Single' = '#3C7D3F', 'In a relationship' = '#4679B3')) +
   theme(text = element_text(hjust = 0.5, size=12, family='serif'), plot.title=element_text(hjust = 0.5), panel.grid.major = element_blank())
@@ -60,12 +62,13 @@ fig2 <- media%>%
   filter(Gender %in% c('Female', 'Male'))%>%
     mutate(Time=factor(Time))%>%
   mutate(Time=fct_relevel(Time, c('Less than an Hour', 'Between 1 and 2 hours', 'Between 2 and 3 hours', 'Between 3 and 4 hours', 'Between 4 and 5 hours', 'More than 5 hours')))%>%
+  mutate(Time=fct_recode(Time, '<1' = 'Less than an Hour', '1-2'='Between 1 and 2 hours', '2-3'='Between 2 and 3 hours', '3-4'='Between 3 and 4 hours', '4-5'='Between 4 and 5 hours', '>5' = 'More than 5 hours'))%>%
   group_by(Time) %>%
   count(Gender) %>%
   mutate(Percentage = n / sum(n) * 100) %>%
-  ggplot(aes(y = Time,x = n, fill = Gender, text = paste0("Time Spent: ", Time,"<br>Gender: ", Gender,"<br>Percentage: ", round(Percentage, 1), "%"))) +
+  ggplot(aes(y = Time,x = n, fill = Gender, text = paste0("Time Spent (hours): ", Time,"<br>Gender: ", Gender,"<br>Percentage: ", round(Percentage, 1), "%"))) +
   geom_bar(stat = "identity", position='fill' , alpha=0.85)+
-  labs(y='Time spent during the day on Social Media', x='Propotion of Use by Gender', title='Fig. 2: Time on Social Media by Gender')+
+  labs(y='Time spent during the day on Social Media in hours', x='Propotion of Use by Gender', title='Fig. 2: Time on Social Media by Gender')+
   theme_minimal()+
   scale_fill_manual(values = c("Female" = "#B0476E", "Male" = "#C9732A")) +
   theme(text = element_text(hjust = 0.5, size=12, family='serif'), plot.title=element_text(hjust = 0.5), panel.grid.major = element_blank())
