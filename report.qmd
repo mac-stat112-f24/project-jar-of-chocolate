@@ -13,7 +13,10 @@ media <- media%>%
   rename(MStat='3. Relationship Status')
 ```
 
-![Our video]('../project-jar-of-chocolate/Stat112.mp4')
+
+<video controls>
+    <source src="../project-jar-of-chocolate/Stat112.mp4" type="video/mp4">
+</video>
 
 
 ## Goals
