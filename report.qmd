@@ -13,7 +13,8 @@ media <- media%>%
   rename(MStat='3. Relationship Status')
 ```
 
-Link to Video: 
+![Our video]('../project-jar-of-chocolate/Stat112.mp4')
+
 
 ## Goals
   In this proposal, we are hoping to investigate how usage of various social media differs by relationship status in addition to  several other questions. We will first determine what the most used social media app is and how long individuals spend on it. Then, we will investigate how that differs by gender and relationship status. Relationship status is a demographic that has rarely been explored as a variable in social media usage statistics. If relationship status is found to influence social media usage time, this could indicate an area for further research. Might, for example, the increased overall happiness of being in a relationship decrease average social media usage time?  Or, might divorced (or single) status lead to a decrease in overall happiness--resulting in an increased dependency on (and thus usage of) social media apps?  
